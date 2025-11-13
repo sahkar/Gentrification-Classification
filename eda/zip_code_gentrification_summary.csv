@@ -1,4 +1,4 @@
-zip,gentrified_count,gentrified_pct,total_businesses,avg_gentrification_score,high_price_pct,avg_rating,avg_review_count,city
+    zip,gentrified_count,gentrified_pct,total_businesses,avg_gentrification_score,high_price_pct,avg_rating,avg_review_count,city
 94103,604,0.449,1344,2.38,0.143,3.863,610.42,
 94109,521,0.432,1207,2.392,0.147,3.839,618.268,
 94110,527,0.562,938,2.518,0.075,3.926,494.936,
