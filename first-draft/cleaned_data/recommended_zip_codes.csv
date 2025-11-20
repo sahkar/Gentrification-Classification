@@ -1,0 +1,31 @@
+zip,city,county,metro,avg_rent,attraction_score,gentrified_pct,total_businesses,avg_rating,recommendation_score
+94117,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3685.6458658494853,0.5796016065273146,0.594,1262.0,3.907,0.9710084695962649
+94110,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3701.1626216852505,0.5501898347211246,0.562,938.0,3.926,0.9402976834214953
+94109,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",2758.515621591759,0.5201121161654441,0.432,1207.0,3.839,0.9251935203361571
+94103,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3334.444026201138,0.5274478265225944,0.449,1344.0,3.863,0.9229922777864249
+94709,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2611.634469926637,0.5155340647896457,0.525,652.0,3.93,0.9229524367073221
+94607,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2550.147226466111,0.5030442857142857,0.417,1426.0,4.002,0.9110688412853989
+94612,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2481.2430160766385,0.501316311800491,0.448,1110.0,3.915,0.9104519443888324
+94606,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2281.0168066271203,0.49582654594188436,0.441,1051.0,3.867,0.9081743276920535
+95126,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2982.161160272568,0.49332083638773433,0.422,1184.0,3.887,0.893655693005043
+95112,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2983.5836945846827,0.48261721892137155,0.397,1119.0,3.863,0.8825511805660584
+94704,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2874.2626924081546,0.4575879229489149,0.334,830.0,3.946,0.8585002892680448
+94601,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",1981.017635107778,0.0,0.0,0.0,0.0,0.4
+94525,Crockett,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2140.0,0.0,0.0,0.0,0.0,0.3972961012951047
+94610,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2147.8491670352837,0.0,0.0,0.0,0.0,0.3971626062839089
+94509,Antioch,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2159.3663792241714,0.0,0.0,0.0,0.0,0.3969667268532397
+94801,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2295.587936631707,0.0,0.0,0.0,0.0,0.3946499334598167
+94542,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2311.524384056604,0.0,0.0,0.0,0.0,0.3943788937153644
+94621,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2336.454528322331,0.0,0.0,0.0,0.0,0.3939548933248893
+94578,San Leandro,Alameda County,"San Francisco-Oakland-Berkeley, CA",2337.2808161749185,0.0,0.0,0.0,0.0,0.39394084020235587
+94565,Pittsburg,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2356.9026065476514,0.0,0.0,0.0,0.0,0.39360712184552726
+94602,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2390.4385640008572,0.0,0.0,0.0,0.0,0.39303675775522945
+94806,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2404.9226655196744,0.0,0.0,0.0,0.0,0.3927904188398104
+94577,San Leandro,Alameda County,"San Francisco-Oakland-Berkeley, CA",2443.855957191528,0.0,0.0,0.0,0.0,0.3921282593795445
+94553,Martinez,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2465.1369598882616,0.0,0.0,0.0,0.0,0.3917663219050983
+94619,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2477.531642742919,0.0,0.0,0.0,0.0,0.39155551885822565
+94580,San Lorenzo,Alameda County,"San Francisco-Oakland-Berkeley, CA",2499.8649475373013,0.0,0.0,0.0,0.0,0.3911756843152529
+94520,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2519.1981936171574,0.0,0.0,0.0,0.0,0.3908468733866182
+94015,Daly City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",2523.098316719581,0.0,0.0,0.0,0.0,0.39078054189247596
+94544,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2538.1083434248535,0.0,0.0,0.0,0.0,0.3905252582841566
+94521,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2544.731332798896,0.0,0.0,0.0,0.0,0.39041261753684386

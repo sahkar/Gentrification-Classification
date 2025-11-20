@@ -1,0 +1,183 @@
+zip,city,county,metro,avg_rent
+94565,Pittsburg,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2356.9026065476514
+94112,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3563.416785091751
+95035,Milpitas,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3252.6224933397334
+94544,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2538.1083434248535
+94513,Brentwood,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3117.7052154629423
+94536,Fremont,Alameda County,"San Francisco-Oakland-Berkeley, CA",3129.045734277235
+94110,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3701.1626216852505
+94509,Antioch,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2159.3663792241714
+94538,Fremont,Alameda County,"San Francisco-Oakland-Berkeley, CA",2922.180805115304
+94587,Union City,Alameda County,"San Francisco-Oakland-Berkeley, CA",2606.9271358209758
+95123,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3123.3298276231794
+94541,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2668.5365851260403
+94080,South San Francisco,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3421.003537251537
+95020,Gilroy,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2820.7150592957405
+94806,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2404.9226655196744
+94015,Daly City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",2523.098316719581
+94501,Alameda,Alameda County,"San Francisco-Oakland-Berkeley, CA",2742.1337841990935
+95127,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2921.2778999332454
+95014,Cupertino,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3743.707465864631
+95051,Santa Clara,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3361.9365425109972
+94568,Dublin,Alameda County,"San Francisco-Oakland-Berkeley, CA",3146.758147567815
+95111,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3582.714735939416
+94122,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3250.39798824087
+94087,Sunnyvale,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3165.8923618340973
+95112,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2983.5836945846827
+95125,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3209.562704087392
+95023,Hollister,San Benito County,"San Jose-Sunnyvale-Santa Clara, CA",2734.2589930240247
+94109,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",2758.515621591759
+95122,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3290.968152536216
+94539,Fremont,Alameda County,"San Francisco-Oakland-Berkeley, CA",3825.9579913664516
+94601,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",1981.017635107778
+95037,Morgan Hill,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3499.2628221965147
+94550,Livermore,Alameda County,"San Francisco-Oakland-Berkeley, CA",2998.3684592449767
+95116,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2822.9716982074824
+95124,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3464.515187492177
+94577,San Leandro,Alameda County,"San Francisco-Oakland-Berkeley, CA",2443.855957191528
+95136,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3266.977336893861
+94086,Sunnyvale,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3661.621971606059
+95148,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3938.012897176361
+94560,Newark,Alameda County,"San Francisco-Oakland-Berkeley, CA",3260.749173947708
+94014,Daly City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",2831.150988594604
+94546,Castro Valley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2681.607484395525
+94553,Martinez,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2465.1369598882616
+95008,Campbell,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3115.689744113375
+94551,Livermore,Alameda County,"San Francisco-Oakland-Berkeley, CA",3244.860083121054
+94605,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2667.6341783046223
+94303,East Palo Alto,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3169.664362132023
+94582,San Ramon,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3401.485865844677
+94403,San Mateo,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3385.000039229713
+94901,San Rafael,Marin County,"San Francisco-Oakland-Berkeley, CA",2821.0923365254816
+94804,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2710.657565495027
+94025,Menlo Park,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3833.892580125764
+94066,San Bruno,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3031.432352479021
+94116,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3189.2763970550423
+94010,Hillsborough,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3376.0498354669203
+95050,Santa Clara,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3237.0241148973496
+94117,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3685.6458658494853
+94566,Pleasanton,Alameda County,"San Francisco-Oakland-Berkeley, CA",3127.8701961744787
+94118,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3581.3332530539965
+94521,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2544.731332798896
+94611,Piedmont,Alameda County,"San Francisco-Oakland-Berkeley, CA",2604.793500289779
+94531,Antioch,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3445.269246451188
+95132,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3368.721120319948
+94561,Oakley,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3184.4623539761214
+94583,San Ramon,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2792.0932498582983
+94121,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3193.1601412232594
+95120,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",4539.395845847546
+95129,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3355.700516081704
+94588,Pleasanton,Alameda County,"San Francisco-Oakland-Berkeley, CA",2865.8923951166757
+94520,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2519.1981936171574
+94621,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2336.454528322331
+94578,San Leandro,Alameda County,"San Francisco-Oakland-Berkeley, CA",2337.2808161749185
+94606,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2281.0168066271203
+94061,Redwood City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3236.14952074033
+94124,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3583.01638067969
+94555,Fremont,Alameda County,"San Francisco-Oakland-Berkeley, CA",3519.820906126961
+94040,Mountain View,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3809.7364551276623
+95121,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3622.9137643701606
+94044,Pacifica,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3321.462330039598
+95128,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3330.3104228051056
+94523,Pleasant Hill,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2950.3026515464076
+94404,Foster City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3749.9336162603936
+94063,Redwood City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3858.1836304969233
+94401,San Mateo,San Mateo County,"San Francisco-Oakland-Berkeley, CA",2967.510756486982
+94114,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",4175.393281128927
+94545,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2567.8361674848497
+95126,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2982.161160272568
+94102,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",2631.0757208029495
+94801,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2295.587936631707
+94115,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3448.4897999631503
+95118,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3993.120102315155
+94608,Emeryville,Alameda County,"San Francisco-Oakland-Berkeley, CA",2750.8667360893137
+94941,Mill Valley,Marin County,"San Francisco-Oakland-Berkeley, CA",4083.3952405121013
+94602,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2390.4385640008572
+94103,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3334.444026201138
+95131,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3349.4840754415163
+94610,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2147.8491670352837
+94603,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2594.8272201762593
+95070,Saratoga,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",5053.551739401736
+94526,Danville,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3830.0877583924353
+94131,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3954.675883273139
+94580,San Lorenzo,Alameda County,"San Francisco-Oakland-Berkeley, CA",2499.8649475373013
+94132,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3487.7571428571428
+94043,Mountain View,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3847.7611865847925
+94070,San Carlos,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3678.117606533561
+94598,Walnut Creek,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3408.842454459206
+94107,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3633.7679441683663
+94062,Emerald Lake Hills,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3077.558144882653
+95134,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3365.2750972783233
+94549,Lafayette,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3585.2336710336817
+95032,Los Gatos,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3953.410506717686
+94903,San Rafael,Marin County,"San Francisco-Oakland-Berkeley, CA",3348.176122847368
+95117,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2829.9932531145296
+94002,Belmont,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3164.8247104020634
+95133,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3574.889354869269
+94306,Palo Alto,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3300.2092950016577
+94704,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2874.2626924081546
+94607,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2550.147226466111
+94518,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2647.6882444294147
+94402,San Mateo,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3614.4043134196268
+94506,Danville,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",5128.521863263472
+94547,Hercules,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2837.8999972539336
+94530,El Cerrito,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2716.733512777184
+94619,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2477.531642742919
+94947,Novato,Marin County,"San Francisco-Oakland-Berkeley, CA",3755.4776576585978
+94133,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3411.304821623777
+94089,Sunnyvale,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3361.1297505652274
+95054,Santa Clara,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3994.952068264531
+94123,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3763.993348641603
+94609,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2551.3749066631326
+94030,Millbrae,San Mateo County,"San Francisco-Oakland-Berkeley, CA",3331.61746880284
+94085,Sunnyvale,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3548.1694859630456
+94024,Los Altos,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",6000.8386620585
+94519,Concord,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3279.427943846154
+94597,Walnut Creek,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2627.6092397459925
+94596,Walnut Creek,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2752.793688451031
+95135,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3661.919781538404
+95110,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3082.246596917835
+94579,San Leandro,Alameda County,"San Francisco-Oakland-Berkeley, CA",3458.880398422711
+94703,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2562.511105886138
+95138,,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3883.0
+94552,Castro Valley,Alameda County,"San Francisco-Oakland-Berkeley, CA",3550.0
+94022,Los Altos,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",6927.529462685928
+94564,Pinole,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3027.25
+94127,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",4880.199519721731
+94563,Orinda,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",5729.511421098006
+94706,Albany,Alameda County,"San Francisco-Oakland-Berkeley, CA",2840.4780073154084
+94301,Palo Alto,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",4125.464289979502
+94949,Novato,Marin County,"San Francisco-Oakland-Berkeley, CA",4021.3366783455776
+94945,Novato,Marin County,"San Francisco-Oakland-Berkeley, CA",3841.0252648583555
+94595,Walnut Creek,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3425.0
+94618,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",3585.362253778168
+94019,Half Moon Bay,San Mateo County,"San Francisco-Oakland-Berkeley, CA",4371.752392208516
+94702,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2593.2321318602717
+94041,Mountain View,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",4212.339130297295
+94960,San Anselmo,Marin County,"San Francisco-Oakland-Berkeley, CA",3652.71071922498
+94805,Richmond,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2655.833333333333
+94612,Oakland,Alameda County,"San Francisco-Oakland-Berkeley, CA",2481.2430160766385
+94542,Hayward,Alameda County,"San Francisco-Oakland-Berkeley, CA",2311.524384056604
+94556,Moraga,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3750.8355550310034
+94705,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2574.6913351566154
+94105,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",4174.990012422565
+95030,Los Gatos,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3515.5436128224114
+95130,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2869.0703450416822
+94904,Kentfield,Marin County,"San Francisco-Oakland-Berkeley, CA",4498.8061934339985
+94108,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",2787.4600259867498
+94920,Tiburon,Marin County,"San Francisco-Oakland-Berkeley, CA",5718.37789714829
+94708,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",4698.295168684471
+94709,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",2611.634469926637
+94065,Redwood City,San Mateo County,"San Francisco-Oakland-Berkeley, CA",4130.207447382273
+94965,Sausalito,Marin County,"San Francisco-Oakland-Berkeley, CA",3940.2733899385426
+94925,Corte Madera,Marin County,"San Francisco-Oakland-Berkeley, CA",5256.0
+95033,Lexington Hills,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",2920.382710267077
+94505,Discovery Bay,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",3213.6977546354833
+94158,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",4210.645646655643
+94027,Atherton,San Mateo County,"San Francisco-Oakland-Berkeley, CA",25500.0
+94710,Berkeley,Alameda County,"San Francisco-Oakland-Berkeley, CA",3016.6364097531255
+94939,Larkspur,Marin County,"San Francisco-Oakland-Berkeley, CA",3374.337809924664
+95113,San Jose,Santa Clara County,"San Jose-Sunnyvale-Santa Clara, CA",3508.881896026635
+94111,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",3854.709142478938
+94129,San Francisco,San Francisco County,"San Francisco-Oakland-Berkeley, CA",5359.050504146854
+94525,Crockett,Contra Costa County,"San Francisco-Oakland-Berkeley, CA",2140.0
