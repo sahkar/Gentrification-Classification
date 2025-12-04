@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_881b5d3a609eab3694b43b463d5eb842 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 220px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <h4>Map Legend</h4>
+    <p><span style="color:red;">●</span> High Growth (Top 25%)</p>
+    <p><span style="color:blue;">●</span> Normal Growth (Bottom 75%)</p>
+    <p><b>Marker Size:</b> Gentrification Intensity</p>
+    <p style="font-size:11px;">(Larger = Higher Intensity)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_881b5d3a609eab3694b43b463d5eb842" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_881b5d3a609eab3694b43b463d5eb842 = L.map(
+                "map_881b5d3a609eab3694b43b463d5eb842",
+                {
+                    center: [37.7749, -122.4194],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0f46f12fd3c192670663ae8fc7e9bd49 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0f46f12fd3c192670663ae8fc7e9bd49.addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+            var circle_marker_137cb6636f203f7316d36089be683da3 = L.circleMarker(
+                [38.0031, -121.9172],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.23794633867902, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_e406e21cfa26e78f111466a0cf62ac5f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d221bd762f06a9c2f376d16fe96dae5e = $(`<div id="html_d221bd762f06a9c2f376d16fe96dae5e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94565</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 27.7%<br><b>Gentrification Intensity:</b> 0.869<br><b>Gentrification Rate:</b> 26.3%<br></div>`)[0];
+                popup_e406e21cfa26e78f111466a0cf62ac5f.setContent(html_d221bd762f06a9c2f376d16fe96dae5e);
+            
+        
+
+        circle_marker_137cb6636f203f7316d36089be683da3.bindPopup(popup_e406e21cfa26e78f111466a0cf62ac5f)
+        ;
+
+        
+    
+    
+            var circle_marker_0895a46455a403c34fba9a9b23d7b978 = L.circleMarker(
+                [37.7195, -122.4411],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.350405927913776, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_f59c0ab09164a7718da30e66f1ca2ee6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_edfee6b26febe2e177d1d5d7a6d3a972 = $(`<div id="html_edfee6b26febe2e177d1d5d7a6d3a972" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94112</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 21.6%<br><b>Gentrification Intensity:</b> 0.687<br><b>Gentrification Rate:</b> 20.6%<br></div>`)[0];
+                popup_f59c0ab09164a7718da30e66f1ca2ee6.setContent(html_edfee6b26febe2e177d1d5d7a6d3a972);
+            
+        
+
+        circle_marker_0895a46455a403c34fba9a9b23d7b978.bindPopup(popup_f59c0ab09164a7718da30e66f1ca2ee6)
+        ;
+
+        
+    
+    
+            var circle_marker_e5475b28faaf457571bd4917e4cbd13c = L.circleMarker(
+                [37.4352, -121.895],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.890624802343318, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_ea2e7aac37672cf1aa64ff91d6892308 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2cf44fb3523f53521ac855406f90cd70 = $(`<div id="html_2cf44fb3523f53521ac855406f90cd70" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95035</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.4%<br><b>Gentrification Intensity:</b> 0.798<br><b>Gentrification Rate:</b> 23.6%<br></div>`)[0];
+                popup_ea2e7aac37672cf1aa64ff91d6892308.setContent(html_2cf44fb3523f53521ac855406f90cd70);
+            
+        
+
+        circle_marker_e5475b28faaf457571bd4917e4cbd13c.bindPopup(popup_ea2e7aac37672cf1aa64ff91d6892308)
+        ;
+
+        
+    
+    
+            var circle_marker_0682d1e8069cccaed3702583715add06 = L.circleMarker(
+                [37.6374, -122.067],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.374052734246867, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_e73149d3f5c9146b0806876599df364f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_849ca78b37ad1d9d0e3b77b490366c3d = $(`<div id="html_849ca78b37ad1d9d0e3b77b490366c3d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94544</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.5%<br><b>Gentrification Intensity:</b> 0.692<br><b>Gentrification Rate:</b> 22.2%<br></div>`)[0];
+                popup_e73149d3f5c9146b0806876599df364f.setContent(html_849ca78b37ad1d9d0e3b77b490366c3d);
+            
+        
+
+        circle_marker_0682d1e8069cccaed3702583715add06.bindPopup(popup_e73149d3f5c9146b0806876599df364f)
+        ;
+
+        
+    
+    
+            var circle_marker_b7be288f9abb1de262f81172f3bfba15 = L.circleMarker(
+                [37.9324, -121.6894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.780619850401001, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_29366c6fcca88f3fb32644b888e1d4e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_77cfa65c666e5bf96102be27a1c8b71e = $(`<div id="html_77cfa65c666e5bf96102be27a1c8b71e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94513</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 66.4%<br><b>Gentrification Intensity:</b> 0.981<br><b>Gentrification Rate:</b> 28.6%<br></div>`)[0];
+                popup_29366c6fcca88f3fb32644b888e1d4e2.setContent(html_77cfa65c666e5bf96102be27a1c8b71e);
+            
+        
+
+        circle_marker_b7be288f9abb1de262f81172f3bfba15.bindPopup(popup_29366c6fcca88f3fb32644b888e1d4e2)
+        ;
+
+        
+    
+    
+            var circle_marker_64e9eeb6a56e9acb64462c08c613ce69 = L.circleMarker(
+                [37.5605, -121.9999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.582941870491709, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_755e4a00bf453cb3a63b24ce0cf71dd8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_358f41aa7678dc867b434d27998f327a = $(`<div id="html_358f41aa7678dc867b434d27998f327a" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94536</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 14.2%<br><b>Gentrification Intensity:</b> 0.735<br><b>Gentrification Rate:</b> 21.8%<br></div>`)[0];
+                popup_755e4a00bf453cb3a63b24ce0cf71dd8.setContent(html_358f41aa7678dc867b434d27998f327a);
+            
+        
+
+        circle_marker_64e9eeb6a56e9acb64462c08c613ce69.bindPopup(popup_755e4a00bf453cb3a63b24ce0cf71dd8)
+        ;
+
+        
+    
+    
+            var circle_marker_995ee663f1db29a64ff7e96347e4bedc = L.circleMarker(
+                [37.7509, -122.4153],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.744759993369716, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_82d748dd541612b832e20887aaf8748c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_acf670044b9cf4b7cbaa8645e68df160 = $(`<div id="html_acf670044b9cf4b7cbaa8645e68df160" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94110</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 10.4%<br><b>Gentrification Intensity:</b> 0.973<br><b>Gentrification Rate:</b> 26.9%<br></div>`)[0];
+                popup_82d748dd541612b832e20887aaf8748c.setContent(html_acf670044b9cf4b7cbaa8645e68df160);
+            
+        
+
+        circle_marker_995ee663f1db29a64ff7e96347e4bedc.bindPopup(popup_82d748dd541612b832e20887aaf8748c)
+        ;
+
+        
+    
+    
+            var circle_marker_31e463ee1840c74918d9046763a47e57 = L.circleMarker(
+                [37.9939, -121.8089],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.146854155692541, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d025004ed6aab489f6e1cdcec80cd0c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25a7c6da647521ad195c073e0bb8d7fc = $(`<div id="html_25a7c6da647521ad195c073e0bb8d7fc" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94509</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 29.0%<br><b>Gentrification Intensity:</b> 0.851<br><b>Gentrification Rate:</b> 25.8%<br></div>`)[0];
+                popup_d025004ed6aab489f6e1cdcec80cd0c7.setContent(html_25a7c6da647521ad195c073e0bb8d7fc);
+            
+        
+
+        circle_marker_31e463ee1840c74918d9046763a47e57.bindPopup(popup_d025004ed6aab489f6e1cdcec80cd0c7)
+        ;
+
+        
+    
+    
+            var circle_marker_f4557966b12076d1e48ccd64d0078bae = L.circleMarker(
+                [37.5308, -121.9712],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.56227538970724, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_26637eed6f7b56bc027bfa52f6b49829 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f617f2288ff2bbd18fc9e1177ae5be29 = $(`<div id="html_f617f2288ff2bbd18fc9e1177ae5be29" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94538</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.5%<br><b>Gentrification Intensity:</b> 0.731<br><b>Gentrification Rate:</b> 21.8%<br></div>`)[0];
+                popup_26637eed6f7b56bc027bfa52f6b49829.setContent(html_f617f2288ff2bbd18fc9e1177ae5be29);
+            
+        
+
+        circle_marker_f4557966b12076d1e48ccd64d0078bae.bindPopup(popup_26637eed6f7b56bc027bfa52f6b49829)
+        ;
+
+        
+    
+    
+            var circle_marker_bf9f2c49303648e7782fadb8ba048cde = L.circleMarker(
+                [37.5895, -122.0497],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.664631495851086, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_84e123193c2635a21a96c0f0d0ec521c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08448115e46b3c996f0b98a4e4e32f35 = $(`<div id="html_08448115e46b3c996f0b98a4e4e32f35" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94587</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.0%<br><b>Gentrification Intensity:</b> 0.752<br><b>Gentrification Rate:</b> 22.2%<br></div>`)[0];
+                popup_84e123193c2635a21a96c0f0d0ec521c.setContent(html_08448115e46b3c996f0b98a4e4e32f35);
+            
+        
+
+        circle_marker_bf9f2c49303648e7782fadb8ba048cde.bindPopup(popup_84e123193c2635a21a96c0f0d0ec521c)
+        ;
+
+        
+    
+    
+            var circle_marker_9294541a5bff2149f9a4f839326ad2de = L.circleMarker(
+                [37.2458, -121.8306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_5156fdca3fae95c39e3a1d6fc461b56f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54de746782121b2a28bcf1913e5413e3 = $(`<div id="html_54de746782121b2a28bcf1913e5413e3" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95123</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.3%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_5156fdca3fae95c39e3a1d6fc461b56f.setContent(html_54de746782121b2a28bcf1913e5413e3);
+            
+        
+
+        circle_marker_9294541a5bff2149f9a4f839326ad2de.bindPopup(popup_5156fdca3fae95c39e3a1d6fc461b56f)
+        ;
+
+        
+    
+    
+            var circle_marker_44b833e02de5e96ad2580d305dea146b = L.circleMarker(
+                [37.674, -122.0894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.145528823768778, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d2f3099c206aa7dc6674773ecef31952 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c0e6bdda80b6108db30e69e4bc6a1b8 = $(`<div id="html_2c0e6bdda80b6108db30e69e4bc6a1b8" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94541</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.1%<br><b>Gentrification Intensity:</b> 0.645<br><b>Gentrification Rate:</b> 21.0%<br></div>`)[0];
+                popup_d2f3099c206aa7dc6674773ecef31952.setContent(html_2c0e6bdda80b6108db30e69e4bc6a1b8);
+            
+        
+
+        circle_marker_44b833e02de5e96ad2580d305dea146b.bindPopup(popup_d2f3099c206aa7dc6674773ecef31952)
+        ;
+
+        
+    
+    
+            var circle_marker_dd263ac76a9634979624e30c0aad4062 = L.circleMarker(
+                [37.6574, -122.4235],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.383876794152984, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_610fd4aec3c28d589a9db53a37653f0c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eba1e31e1b0c819fc82a3775c755e70f = $(`<div id="html_eba1e31e1b0c819fc82a3775c755e70f" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94080</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 12.1%<br><b>Gentrification Intensity:</b> 0.489<br><b>Gentrification Rate:</b> 16.5%<br></div>`)[0];
+                popup_610fd4aec3c28d589a9db53a37653f0c.setContent(html_eba1e31e1b0c819fc82a3775c755e70f);
+            
+        
+
+        circle_marker_dd263ac76a9634979624e30c0aad4062.bindPopup(popup_610fd4aec3c28d589a9db53a37653f0c)
+        ;
+
+        
+    
+    
+            var circle_marker_4daa337683b1cfa248cfaf0274f45aaf = L.circleMarker(
+                [37.6787, -122.478],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.082953127162696, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_88c12032cc9380562c58b61caa14aadb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60bb62af33034ec8bb74707251e6f71a = $(`<div id="html_60bb62af33034ec8bb74707251e6f71a" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94015</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.0%<br><b>Gentrification Intensity:</b> 0.632<br><b>Gentrification Rate:</b> 19.8%<br></div>`)[0];
+                popup_88c12032cc9380562c58b61caa14aadb.setContent(html_60bb62af33034ec8bb74707251e6f71a);
+            
+        
+
+        circle_marker_4daa337683b1cfa248cfaf0274f45aaf.bindPopup(popup_88c12032cc9380562c58b61caa14aadb)
+        ;
+
+        
+    
+    
+            var circle_marker_cb70431818506470b45eb1f202b59d47 = L.circleMarker(
+                [37.7706, -122.2648],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.218636861513561, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a48c0681d45584b11ff7a95a5ce24561 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_71f43bc50e67781213a87dd7f8815189 = $(`<div id="html_71f43bc50e67781213a87dd7f8815189" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94501</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 12.6%<br><b>Gentrification Intensity:</b> 1.276<br><b>Gentrification Rate:</b> 31.8%<br></div>`)[0];
+                popup_a48c0681d45584b11ff7a95a5ce24561.setContent(html_71f43bc50e67781213a87dd7f8815189);
+            
+        
+
+        circle_marker_cb70431818506470b45eb1f202b59d47.bindPopup(popup_a48c0681d45584b11ff7a95a5ce24561)
+        ;
+
+        
+    
+    
+            var circle_marker_9d3f7376a072cedc97e026ba2c873415 = L.circleMarker(
+                [37.318, -122.0449],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.476941484232896, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_4f8fe2c3f9846e000aad16c3dbd5f3f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b32e345161eee51447a31aa6753e5f96 = $(`<div id="html_b32e345161eee51447a31aa6753e5f96" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95014</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.9%<br><b>Gentrification Intensity:</b> 0.918<br><b>Gentrification Rate:</b> 26.0%<br></div>`)[0];
+                popup_4f8fe2c3f9846e000aad16c3dbd5f3f5.setContent(html_b32e345161eee51447a31aa6753e5f96);
+            
+        
+
+        circle_marker_9d3f7376a072cedc97e026ba2c873415.bindPopup(popup_4f8fe2c3f9846e000aad16c3dbd5f3f5)
+        ;
+
+        
+    
+    
+            var circle_marker_e558e8c8f97047c3e81b399e508babb4 = L.circleMarker(
+                [37.3483, -121.9844],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.127667238369487, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_bd5dc3bd72d772c4eba4287e25253be3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62a2b5087422fbc619899e3c543058b7 = $(`<div id="html_62a2b5087422fbc619899e3c543058b7" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95051</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.5%<br><b>Gentrification Intensity:</b> 0.847<br><b>Gentrification Rate:</b> 24.9%<br></div>`)[0];
+                popup_bd5dc3bd72d772c4eba4287e25253be3.setContent(html_62a2b5087422fbc619899e3c543058b7);
+            
+        
+
+        circle_marker_e558e8c8f97047c3e81b399e508babb4.bindPopup(popup_bd5dc3bd72d772c4eba4287e25253be3)
+        ;
+
+        
+    
+    
+            var circle_marker_76832c8cd6a2f844bbd7cdd82c6a8a7a = L.circleMarker(
+                [37.7166, -121.9226],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.018593872785646, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_2d7cd17522aab2d77acf82031f0fc289 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26d1d15fa7e3967531f64f29bd48186e = $(`<div id="html_26d1d15fa7e3967531f64f29bd48186e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94568</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.0%<br><b>Gentrification Intensity:</b> 0.619<br><b>Gentrification Rate:</b> 19.0%<br></div>`)[0];
+                popup_2d7cd17522aab2d77acf82031f0fc289.setContent(html_26d1d15fa7e3967531f64f29bd48186e);
+            
+        
+
+        circle_marker_76832c8cd6a2f844bbd7cdd82c6a8a7a.bindPopup(popup_2d7cd17522aab2d77acf82031f0fc289)
+        ;
+
+        
+    
+    
+            var circle_marker_99cb707625b69bc7ec4570884a52ddba = L.circleMarker(
+                [37.7593, -122.4836],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.349406189643648, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_4457071361eee0268505d0dfa3a42bd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a8bbcce6f63e265a581ff51aa868266 = $(`<div id="html_8a8bbcce6f63e265a581ff51aa868266" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94122</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 19.0%<br><b>Gentrification Intensity:</b> 0.892<br><b>Gentrification Rate:</b> 24.9%<br></div>`)[0];
+                popup_4457071361eee0268505d0dfa3a42bd9.setContent(html_8a8bbcce6f63e265a581ff51aa868266);
+            
+        
+
+        circle_marker_99cb707625b69bc7ec4570884a52ddba.bindPopup(popup_4457071361eee0268505d0dfa3a42bd9)
+        ;
+
+        
+    
+    
+            var circle_marker_25b79a80a820d3d8fb1a9c5961d66537 = L.circleMarker(
+                [37.3502, -122.0349],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.441324023769685, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_b3c524b4fec321b71b9853615265202c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78c773027cb758b542d08655ad4f298e = $(`<div id="html_78c773027cb758b542d08655ad4f298e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94087</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.7%<br><b>Gentrification Intensity:</b> 0.706<br><b>Gentrification Rate:</b> 22.3%<br></div>`)[0];
+                popup_b3c524b4fec321b71b9853615265202c.setContent(html_78c773027cb758b542d08655ad4f298e);
+            
+        
+
+        circle_marker_25b79a80a820d3d8fb1a9c5961d66537.bindPopup(popup_b3c524b4fec321b71b9853615265202c)
+        ;
+
+        
+    
+    
+            var circle_marker_fb50aa225d2d58c2eef2d281ce312578 = L.circleMarker(
+                [37.3476, -121.887],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.498416385717638, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_ef539983b55ef108d6dbd72e5b5d5e58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30a9e78cc581c57a2cd0024ce220f744 = $(`<div id="html_30a9e78cc581c57a2cd0024ce220f744" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95112</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.6%<br><b>Gentrification Intensity:</b> 0.718<br><b>Gentrification Rate:</b> 21.6%<br></div>`)[0];
+                popup_ef539983b55ef108d6dbd72e5b5d5e58.setContent(html_30a9e78cc581c57a2cd0024ce220f744);
+            
+        
+
+        circle_marker_fb50aa225d2d58c2eef2d281ce312578.bindPopup(popup_ef539983b55ef108d6dbd72e5b5d5e58)
+        ;
+
+        
+    
+    
+            var circle_marker_696dd892c1af02450fce1ad68171d201 = L.circleMarker(
+                [37.296, -121.8939],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_6929380b7e48d10e7b1f55295587ef97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e4f78867288c5e247f11cc8e8847790 = $(`<div id="html_6e4f78867288c5e247f11cc8e8847790" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95125</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 21.9%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_6929380b7e48d10e7b1f55295587ef97.setContent(html_6e4f78867288c5e247f11cc8e8847790);
+            
+        
+
+        circle_marker_696dd892c1af02450fce1ad68171d201.bindPopup(popup_6929380b7e48d10e7b1f55295587ef97)
+        ;
+
+        
+    
+    
+            var circle_marker_13947880267b600662159b53690b313f = L.circleMarker(
+                [37.7917, -122.4186],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.908243374164474, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a7d3bb9c202aec777a2a7c8a67a83af3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_29645e5491da9ae8bb3d70896f99e0ca = $(`<div id="html_29645e5491da9ae8bb3d70896f99e0ca" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94109</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 2.8%<br><b>Gentrification Intensity:</b> 1.212<br><b>Gentrification Rate:</b> 32.3%<br></div>`)[0];
+                popup_a7d3bb9c202aec777a2a7c8a67a83af3.setContent(html_29645e5491da9ae8bb3d70896f99e0ca);
+            
+        
+
+        circle_marker_13947880267b600662159b53690b313f.bindPopup(popup_a7d3bb9c202aec777a2a7c8a67a83af3)
+        ;
+
+        
+    
+    
+            var circle_marker_a2f5a7b3fb6150a90b602736b2967c26 = L.circleMarker(
+                [37.5176, -121.9287],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.263189514972115, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0eb48a70ea95883241bd0a9d638eeb14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2c7218ee1026e24fd31c3220360e9fc = $(`<div id="html_c2c7218ee1026e24fd31c3220360e9fc" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94539</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.7%<br><b>Gentrification Intensity:</b> 0.669<br><b>Gentrification Rate:</b> 20.5%<br></div>`)[0];
+                popup_0eb48a70ea95883241bd0a9d638eeb14.setContent(html_c2c7218ee1026e24fd31c3220360e9fc);
+            
+        
+
+        circle_marker_a2f5a7b3fb6150a90b602736b2967c26.bindPopup(popup_0eb48a70ea95883241bd0a9d638eeb14)
+        ;
+
+        
+    
+    
+            var circle_marker_fdfbbd7eb0e30604032e193834fc153a = L.circleMarker(
+                [37.7806, -122.2166],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.251750716987553, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_faac1db3bd6320e7c15fd6d60c319b36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31916e66de53d5e0d52b3f3ae20f1d84 = $(`<div id="html_31916e66de53d5e0d52b3f3ae20f1d84" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94601</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 8.5%<br><b>Gentrification Intensity:</b> 0.667<br><b>Gentrification Rate:</b> 20.3%<br></div>`)[0];
+                popup_faac1db3bd6320e7c15fd6d60c319b36.setContent(html_31916e66de53d5e0d52b3f3ae20f1d84);
+            
+        
+
+        circle_marker_fdfbbd7eb0e30604032e193834fc153a.bindPopup(popup_faac1db3bd6320e7c15fd6d60c319b36)
+        ;
+
+        
+    
+    
+            var circle_marker_db9f71c55425a7f60059c1dcc1574de3 = L.circleMarker(
+                [37.1353, -121.6501],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.326124919381352, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a81836b6d3408407403b50bc267eaf1e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d26056a8bf848a46496a74ee693cfad7 = $(`<div id="html_d26056a8bf848a46496a74ee693cfad7" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95037</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 27.7%<br><b>Gentrification Intensity:</b> 1.913<br><b>Gentrification Rate:</b> 44.9%<br></div>`)[0];
+                popup_a81836b6d3408407403b50bc267eaf1e.setContent(html_d26056a8bf848a46496a74ee693cfad7);
+            
+        
+
+        circle_marker_db9f71c55425a7f60059c1dcc1574de3.bindPopup(popup_a81836b6d3408407403b50bc267eaf1e)
+        ;
+
+        
+    
+    
+            var circle_marker_8de34ae6c8a3f3c8237bd75c457ccfed = L.circleMarker(
+                [37.683, -121.763],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.999999995125478, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a8ad48d66029dae2c31559420680e68a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c0789bd5fcee336f8f36eecd754f0ca8 = $(`<div id="html_c0789bd5fcee336f8f36eecd754f0ca8" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94550</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.1%<br><b>Gentrification Intensity:</b> 2.051<br><b>Gentrification Rate:</b> 45.0%<br></div>`)[0];
+                popup_a8ad48d66029dae2c31559420680e68a.setContent(html_c0789bd5fcee336f8f36eecd754f0ca8);
+            
+        
+
+        circle_marker_8de34ae6c8a3f3c8237bd75c457ccfed.bindPopup(popup_a8ad48d66029dae2c31559420680e68a)
+        ;
+
+        
+    
+    
+            var circle_marker_47d6cfa265ffc704e66aece2478f930b = L.circleMarker(
+                [37.2563, -121.9229],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0d084a440fd30a2d7781f0b8efa700f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_523705e08f3c82483e69ee0f04d91267 = $(`<div id="html_523705e08f3c82483e69ee0f04d91267" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95124</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 24.2%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_0d084a440fd30a2d7781f0b8efa700f8.setContent(html_523705e08f3c82483e69ee0f04d91267);
+            
+        
+
+        circle_marker_47d6cfa265ffc704e66aece2478f930b.bindPopup(popup_0d084a440fd30a2d7781f0b8efa700f8)
+        ;
+
+        
+    
+    
+            var circle_marker_1f5895f7258ad8e2fe3c415d11e99bf6 = L.circleMarker(
+                [37.2685, -121.849],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_2ad13f496f038d04c6b144a67ae80b03 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56736c26d3a6731c21f1fcaa41217e67 = $(`<div id="html_56736c26d3a6731c21f1fcaa41217e67" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95136</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.0%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_2ad13f496f038d04c6b144a67ae80b03.setContent(html_56736c26d3a6731c21f1fcaa41217e67);
+            
+        
+
+        circle_marker_1f5895f7258ad8e2fe3c415d11e99bf6.bindPopup(popup_2ad13f496f038d04c6b144a67ae80b03)
+        ;
+
+        
+    
+    
+            var circle_marker_abceaef06c74c1e83e8580cf6d42a68e = L.circleMarker(
+                [37.3764, -122.0238],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.211065267013643, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_43508bf35ee1d9de9cd295e54991a3fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_85a6506af36d299e9824657d8acf8971 = $(`<div id="html_85a6506af36d299e9824657d8acf8971" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94086</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.9%<br><b>Gentrification Intensity:</b> 0.659<br><b>Gentrification Rate:</b> 21.3%<br></div>`)[0];
+                popup_43508bf35ee1d9de9cd295e54991a3fc.setContent(html_85a6506af36d299e9824657d8acf8971);
+            
+        
+
+        circle_marker_abceaef06c74c1e83e8580cf6d42a68e.bindPopup(popup_43508bf35ee1d9de9cd295e54991a3fc)
+        ;
+
+        
+    
+    
+            var circle_marker_fcb45914dd5e036727bb1e2d7f2f2fe4 = L.circleMarker(
+                [37.5368, -122.032],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.71844849129046, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_af1863999164ede12d85bb0fe4c4c31c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9393d9038c1f4159708971e56b264c2a = $(`<div id="html_9393d9038c1f4159708971e56b264c2a" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94560</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.3%<br><b>Gentrification Intensity:</b> 0.763<br><b>Gentrification Rate:</b> 22.6%<br></div>`)[0];
+                popup_af1863999164ede12d85bb0fe4c4c31c.setContent(html_9393d9038c1f4159708971e56b264c2a);
+            
+        
+
+        circle_marker_fcb45914dd5e036727bb1e2d7f2f2fe4.bindPopup(popup_af1863999164ede12d85bb0fe4c4c31c)
+        ;
+
+        
+    
+    
+            var circle_marker_590a9688a52c4de451c98425aa21212b = L.circleMarker(
+                [37.7015, -122.0782],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.9988241336913, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_8b67bdd602d0b82130102a70381c0de3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5536096bdefff3976571969f8e2d58c3 = $(`<div id="html_5536096bdefff3976571969f8e2d58c3" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94546</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.5%<br><b>Gentrification Intensity:</b> 0.820<br><b>Gentrification Rate:</b> 23.6%<br></div>`)[0];
+                popup_8b67bdd602d0b82130102a70381c0de3.setContent(html_5536096bdefff3976571969f8e2d58c3);
+            
+        
+
+        circle_marker_590a9688a52c4de451c98425aa21212b.bindPopup(popup_8b67bdd602d0b82130102a70381c0de3)
+        ;
+
+        
+    
+    
+            var circle_marker_2724f481cb5d7dcbed1796f8495fc03c = L.circleMarker(
+                [37.9864, -122.135],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.575056861175959, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_9b21ee16352af73677c9fc824bc3c292 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7d94f052a70996d75062c466bc372fd = $(`<div id="html_a7d94f052a70996d75062c466bc372fd" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94553</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 31.5%<br><b>Gentrification Intensity:</b> 0.939<br><b>Gentrification Rate:</b> 27.0%<br></div>`)[0];
+                popup_9b21ee16352af73677c9fc824bc3c292.setContent(html_a7d94f052a70996d75062c466bc372fd);
+            
+        
+
+        circle_marker_2724f481cb5d7dcbed1796f8495fc03c.bindPopup(popup_9b21ee16352af73677c9fc824bc3c292)
+        ;
+
+        
+    
+    
+            var circle_marker_4db249365b107b9cf80d1e3c17d78f52 = L.circleMarker(
+                [37.2803, -121.9539],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.851495515196364, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_8cdd179ff0039071cbc0c895e2b113a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_502da4b4bebe0f89d58eb21aca9e651b = $(`<div id="html_502da4b4bebe0f89d58eb21aca9e651b" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95008</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.5%<br><b>Gentrification Intensity:</b> 0.790<br><b>Gentrification Rate:</b> 23.0%<br></div>`)[0];
+                popup_8cdd179ff0039071cbc0c895e2b113a5.setContent(html_502da4b4bebe0f89d58eb21aca9e651b);
+            
+        
+
+        circle_marker_4db249365b107b9cf80d1e3c17d78f52.bindPopup(popup_8cdd179ff0039071cbc0c895e2b113a5)
+        ;
+
+        
+    
+    
+            var circle_marker_d88e21920429c9568bbe682634310d7a = L.circleMarker(
+                [37.7526, -121.77],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.023803115057294, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0754a526b4ab77dae9e28150e364dc60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1dbd7b330d1c6fab3b7d0b00020dacfb = $(`<div id="html_1dbd7b330d1c6fab3b7d0b00020dacfb" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94551</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.1%<br><b>Gentrification Intensity:</b> 1.851<br><b>Gentrification Rate:</b> 43.4%<br></div>`)[0];
+                popup_0754a526b4ab77dae9e28150e364dc60.setContent(html_1dbd7b330d1c6fab3b7d0b00020dacfb);
+            
+        
+
+        circle_marker_d88e21920429c9568bbe682634310d7a.bindPopup(popup_0754a526b4ab77dae9e28150e364dc60)
+        ;
+
+        
+    
+    
+            var circle_marker_232a433d6dba685e03fb13ae9034688b = L.circleMarker(
+                [37.7641, -122.1633],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.901250292546703, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_63f6292d9654d0585103ff2641a5077f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4701b1641d7ce5d4cda56db8fcbe76e6 = $(`<div id="html_4701b1641d7ce5d4cda56db8fcbe76e6" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94605</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.1%<br><b>Gentrification Intensity:</b> 0.800<br><b>Gentrification Rate:</b> 24.0%<br></div>`)[0];
+                popup_63f6292d9654d0585103ff2641a5077f.setContent(html_4701b1641d7ce5d4cda56db8fcbe76e6);
+            
+        
+
+        circle_marker_232a433d6dba685e03fb13ae9034688b.bindPopup(popup_63f6292d9654d0585103ff2641a5077f)
+        ;
+
+        
+    
+    
+            var circle_marker_a0cc8d9d5d78f733838508d65c70be60 = L.circleMarker(
+                [37.4673, -122.1388],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.339954384452987, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_eb551b57b28ceac4b2a4bd9420c48cc2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54121c7e2b0c44504a5de9eb06cd6233 = $(`<div id="html_54121c7e2b0c44504a5de9eb06cd6233" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94303</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.9%<br><b>Gentrification Intensity:</b> 0.685<br><b>Gentrification Rate:</b> 21.3%<br></div>`)[0];
+                popup_eb551b57b28ceac4b2a4bd9420c48cc2.setContent(html_54121c7e2b0c44504a5de9eb06cd6233);
+            
+        
+
+        circle_marker_a0cc8d9d5d78f733838508d65c70be60.bindPopup(popup_eb551b57b28ceac4b2a4bd9420c48cc2)
+        ;
+
+        
+    
+    
+            var circle_marker_22898252652434f9e7f49d8958820f81 = L.circleMarker(
+                [37.7636, -121.9155],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.207460827783978, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a7036e7a7605d59678c50f089d701d5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_733de28ad148538c4f39c8b5597972a5 = $(`<div id="html_733de28ad148538c4f39c8b5597972a5" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94582</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.2%<br><b>Gentrification Intensity:</b> 1.068<br><b>Gentrification Rate:</b> 29.2%<br></div>`)[0];
+                popup_a7036e7a7605d59678c50f089d701d5c.setContent(html_733de28ad148538c4f39c8b5597972a5);
+            
+        
+
+        circle_marker_22898252652434f9e7f49d8958820f81.bindPopup(popup_a7036e7a7605d59678c50f089d701d5c)
+        ;
+
+        
+    
+    
+            var circle_marker_551ff4d508db1cd5f5fc30d78fa47b28 = L.circleMarker(
+                [37.5395, -122.2998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.367546966097738, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d8deca3edd08246802d2a375403a6c08 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_805ef2a43744ff6913bd81373106ecbe = $(`<div id="html_805ef2a43744ff6913bd81373106ecbe" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94403</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.8%<br><b>Gentrification Intensity:</b> 0.691<br><b>Gentrification Rate:</b> 20.9%<br></div>`)[0];
+                popup_d8deca3edd08246802d2a375403a6c08.setContent(html_805ef2a43744ff6913bd81373106ecbe);
+            
+        
+
+        circle_marker_551ff4d508db1cd5f5fc30d78fa47b28.bindPopup(popup_d8deca3edd08246802d2a375403a6c08)
+        ;
+
+        
+    
+    
+            var circle_marker_29414ba71ab967ae3a2abebbda152ae7 = L.circleMarker(
+                [37.9691, -122.5105],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.138087661831687, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_1959066368eebeb6ad9c59beaef19925 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8796711cf5786cc6e56a39af0974a368 = $(`<div id="html_8796711cf5786cc6e56a39af0974a368" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94901</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 26.3%<br><b>Gentrification Intensity:</b> 0.849<br><b>Gentrification Rate:</b> 25.0%<br></div>`)[0];
+                popup_1959066368eebeb6ad9c59beaef19925.setContent(html_8796711cf5786cc6e56a39af0974a368);
+            
+        
+
+        circle_marker_29414ba71ab967ae3a2abebbda152ae7.bindPopup(popup_1959066368eebeb6ad9c59beaef19925)
+        ;
+
+        
+    
+    
+            var circle_marker_2bfc73fa17425c13484e4417c33434b7 = L.circleMarker(
+                [37.9265, -122.3342],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.51162497814591, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_c710883911a7ce27f95db6fcd7f006f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5de26388dbc95fc877bee2138d791004 = $(`<div id="html_5de26388dbc95fc877bee2138d791004" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94804</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.4%<br><b>Gentrification Intensity:</b> 0.515<br><b>Gentrification Rate:</b> 16.8%<br></div>`)[0];
+                popup_c710883911a7ce27f95db6fcd7f006f0.setContent(html_5de26388dbc95fc877bee2138d791004);
+            
+        
+
+        circle_marker_2bfc73fa17425c13484e4417c33434b7.bindPopup(popup_c710883911a7ce27f95db6fcd7f006f0)
+        ;
+
+        
+    
+    
+            var circle_marker_1d25137542d183b65205468c178726d3 = L.circleMarker(
+                [37.4396, -122.1864],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.445926405918998, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_50fb2ce823d62d9137c01da425e0ac5a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d1c132aa8e2623d4d3ab3312f091619 = $(`<div id="html_5d1c132aa8e2623d4d3ab3312f091619" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94025</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.3%<br><b>Gentrification Intensity:</b> 0.912<br><b>Gentrification Rate:</b> 25.9%<br></div>`)[0];
+                popup_50fb2ce823d62d9137c01da425e0ac5a.setContent(html_5d1c132aa8e2623d4d3ab3312f091619);
+            
+        
+
+        circle_marker_1d25137542d183b65205468c178726d3.bindPopup(popup_50fb2ce823d62d9137c01da425e0ac5a)
+        ;
+
+        
+    
+    
+            var circle_marker_33f47ebef7b4516105ca94bd2ff7e697 = L.circleMarker(
+                [37.6247, -122.429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.102943760867041, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3bdb01b106ca11c9a6b448318ac8fa00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52061e3bfbd05ea9df4e676c1e864451 = $(`<div id="html_52061e3bfbd05ea9df4e676c1e864451" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94066</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 10.7%<br><b>Gentrification Intensity:</b> 0.431<br><b>Gentrification Rate:</b> 14.7%<br></div>`)[0];
+                popup_3bdb01b106ca11c9a6b448318ac8fa00.setContent(html_52061e3bfbd05ea9df4e676c1e864451);
+            
+        
+
+        circle_marker_33f47ebef7b4516105ca94bd2ff7e697.bindPopup(popup_3bdb01b106ca11c9a6b448318ac8fa00)
+        ;
+
+        
+    
+    
+            var circle_marker_ac8d5e37ad9cfc70943ec4548c9692f6 = L.circleMarker(
+                [37.7441, -122.4863],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.514867248794193, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3b501ff3ee22aca714936546af53ad41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d01d08455ee127dbf01db02c29f6986 = $(`<div id="html_6d01d08455ee127dbf01db02c29f6986" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94116</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 22.9%<br><b>Gentrification Intensity:</b> 1.747<br><b>Gentrification Rate:</b> 41.0%<br></div>`)[0];
+                popup_3b501ff3ee22aca714936546af53ad41.setContent(html_6d01d08455ee127dbf01db02c29f6986);
+            
+        
+
+        circle_marker_ac8d5e37ad9cfc70943ec4548c9692f6.bindPopup(popup_3b501ff3ee22aca714936546af53ad41)
+        ;
+
+        
+    
+    
+            var circle_marker_b2f1ffa5683283079c5eb10af7494fcb = L.circleMarker(
+                [37.5671, -122.3676],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.891202923358957, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_e7b762cd5f8ea30054bbec6e2ef478ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5fd1e3d05c700b70512c7fe44f129d4 = $(`<div id="html_f5fd1e3d05c700b70512c7fe44f129d4" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94010</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.8%<br><b>Gentrification Intensity:</b> 0.593<br><b>Gentrification Rate:</b> 18.7%<br></div>`)[0];
+                popup_e7b762cd5f8ea30054bbec6e2ef478ad.setContent(html_f5fd1e3d05c700b70512c7fe44f129d4);
+            
+        
+
+        circle_marker_b2f1ffa5683283079c5eb10af7494fcb.bindPopup(popup_e7b762cd5f8ea30054bbec6e2ef478ad)
+        ;
+
+        
+    
+    
+            var circle_marker_b11667c1ca4e573632cf5aac97731746 = L.circleMarker(
+                [37.3492, -121.953],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.965949526377125, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_37f4c8c62f5434897cbdbc1805973b66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e87cab8d514f6d03111d1fc5255d3628 = $(`<div id="html_e87cab8d514f6d03111d1fc5255d3628" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95050</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 21.4%<br><b>Gentrification Intensity:</b> 0.814<br><b>Gentrification Rate:</b> 24.0%<br></div>`)[0];
+                popup_37f4c8c62f5434897cbdbc1805973b66.setContent(html_e87cab8d514f6d03111d1fc5255d3628);
+            
+        
+
+        circle_marker_b11667c1ca4e573632cf5aac97731746.bindPopup(popup_37f4c8c62f5434897cbdbc1805973b66)
+        ;
+
+        
+    
+    
+            var circle_marker_3d1b88f2be91f532da9630ea54108cec = L.circleMarker(
+                [37.7712, -122.4413],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.153618281392646, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_8ceb49c476a04b23ab30b10727846102 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f242248c5007bbee30f9e59440f18bee = $(`<div id="html_f242248c5007bbee30f9e59440f18bee" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94117</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 12.4%<br><b>Gentrification Intensity:</b> 1.057<br><b>Gentrification Rate:</b> 27.8%<br></div>`)[0];
+                popup_8ceb49c476a04b23ab30b10727846102.setContent(html_f242248c5007bbee30f9e59440f18bee);
+            
+        
+
+        circle_marker_3d1b88f2be91f532da9630ea54108cec.bindPopup(popup_8ceb49c476a04b23ab30b10727846102)
+        ;
+
+        
+    
+    
+            var circle_marker_6eefa4e2abed699eff42ecc17da578aa = L.circleMarker(
+                [37.6658, -121.8755],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.550382115611328, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_cccd0da7dafba693bda3d6a38db4131f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a373a9cc04109dfe5fcdf74fb64b77fc = $(`<div id="html_a373a9cc04109dfe5fcdf74fb64b77fc" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94566</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.2%<br><b>Gentrification Intensity:</b> 0.934<br><b>Gentrification Rate:</b> 26.7%<br></div>`)[0];
+                popup_cccd0da7dafba693bda3d6a38db4131f.setContent(html_a373a9cc04109dfe5fcdf74fb64b77fc);
+            
+        
+
+        circle_marker_6eefa4e2abed699eff42ecc17da578aa.bindPopup(popup_cccd0da7dafba693bda3d6a38db4131f)
+        ;
+
+        
+    
+    
+            var circle_marker_095b174dfb9bb5a9341095bd6f8297aa = L.circleMarker(
+                [37.7812, -122.4614],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.86269546277729, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_38b29c3391b18b850b648dbaf0c9e673 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa538be41c0f2a27acb77e412427ec45 = $(`<div id="html_fa538be41c0f2a27acb77e412427ec45" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94118</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 28.1%<br><b>Gentrification Intensity:</b> 0.998<br><b>Gentrification Rate:</b> 26.6%<br></div>`)[0];
+                popup_38b29c3391b18b850b648dbaf0c9e673.setContent(html_fa538be41c0f2a27acb77e412427ec45);
+            
+        
+
+        circle_marker_095b174dfb9bb5a9341095bd6f8297aa.bindPopup(popup_38b29c3391b18b850b648dbaf0c9e673)
+        ;
+
+        
+    
+    
+            var circle_marker_dddaff5fa082354756117251c6d34373 = L.circleMarker(
+                [37.9575, -121.975],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.620291639499023, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_e3aa6d2ac36cf7757ec428c5f47f7a4b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5fb53a2ad80004120160404227c88a9 = $(`<div id="html_c5fb53a2ad80004120160404227c88a9" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94521</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 25.5%<br><b>Gentrification Intensity:</b> 0.538<br><b>Gentrification Rate:</b> 17.9%<br></div>`)[0];
+                popup_e3aa6d2ac36cf7757ec428c5f47f7a4b.setContent(html_c5fb53a2ad80004120160404227c88a9);
+            
+        
+
+        circle_marker_dddaff5fa082354756117251c6d34373.bindPopup(popup_e3aa6d2ac36cf7757ec428c5f47f7a4b)
+        ;
+
+        
+    
+    
+            var circle_marker_cc414bb1e68bbbc92ec47bc765c6f9c1 = L.circleMarker(
+                [37.8471, -122.2223],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.255935595572844, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_ab50b769734aa234c87e6f720bc6ff70 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc729a4ccc96a5c6dba2e43dea6f84e0 = $(`<div id="html_dc729a4ccc96a5c6dba2e43dea6f84e0" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94611</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 4.7%<br><b>Gentrification Intensity:</b> 1.078<br><b>Gentrification Rate:</b> 28.7%<br></div>`)[0];
+                popup_ab50b769734aa234c87e6f720bc6ff70.setContent(html_dc729a4ccc96a5c6dba2e43dea6f84e0);
+            
+        
+
+        circle_marker_cc414bb1e68bbbc92ec47bc765c6f9c1.bindPopup(popup_ab50b769734aa234c87e6f720bc6ff70)
+        ;
+
+        
+    
+    
+            var circle_marker_094d26a41b32660e0b9d4deddd791b34 = L.circleMarker(
+                [37.4031, -121.8585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0d489f81f279a19feb59efe89e5a91f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_64ddf4d7d8f637aefb5b088bfcd51433 = $(`<div id="html_64ddf4d7d8f637aefb5b088bfcd51433" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95132</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 23.8%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_0d489f81f279a19feb59efe89e5a91f9.setContent(html_64ddf4d7d8f637aefb5b088bfcd51433);
+            
+        
+
+        circle_marker_094d26a41b32660e0b9d4deddd791b34.bindPopup(popup_0d489f81f279a19feb59efe89e5a91f9)
+        ;
+
+        
+    
+    
+            var circle_marker_dd426c7016fa60305fbb6c9b9eb76066 = L.circleMarker(
+                [37.7562, -121.9522],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.699107145785863, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_8e7eb26ad7419a8a00191efc1836384e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ec9a33cb0d4765aaf912700c94f2e52 = $(`<div id="html_5ec9a33cb0d4765aaf912700c94f2e52" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94583</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 19.0%<br><b>Gentrification Intensity:</b> 0.759<br><b>Gentrification Rate:</b> 22.5%<br></div>`)[0];
+                popup_8e7eb26ad7419a8a00191efc1836384e.setContent(html_5ec9a33cb0d4765aaf912700c94f2e52);
+            
+        
+
+        circle_marker_dd426c7016fa60305fbb6c9b9eb76066.bindPopup(popup_8e7eb26ad7419a8a00191efc1836384e)
+        ;
+
+        
+    
+    
+            var circle_marker_3f2eace1196e2a11601ba1f1e3b4e3a5 = L.circleMarker(
+                [37.7786, -122.4892],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.966467696518368, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_c2439cf64e91c3454acee84626c86cf9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48bb7c931b1db5dd6df11512ea4f5f17 = $(`<div id="html_48bb7c931b1db5dd6df11512ea4f5f17" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94121</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 14.5%<br><b>Gentrification Intensity:</b> 1.429<br><b>Gentrification Rate:</b> 35.5%<br></div>`)[0];
+                popup_c2439cf64e91c3454acee84626c86cf9.setContent(html_48bb7c931b1db5dd6df11512ea4f5f17);
+            
+        
+
+        circle_marker_3f2eace1196e2a11601ba1f1e3b4e3a5.bindPopup(popup_c2439cf64e91c3454acee84626c86cf9)
+        ;
+
+        
+    
+    
+            var circle_marker_9370cbb5a3b9fc6f1bed58bb65d5daa5 = L.circleMarker(
+                [37.3066, -122.0002],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_6828f54399af328dec404420a8b55ca6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a0b324d41b5298e0d4bb03cf61fbffe = $(`<div id="html_6a0b324d41b5298e0d4bb03cf61fbffe" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95129</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.3%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_6828f54399af328dec404420a8b55ca6.setContent(html_6a0b324d41b5298e0d4bb03cf61fbffe);
+            
+        
+
+        circle_marker_9370cbb5a3b9fc6f1bed58bb65d5daa5.bindPopup(popup_6828f54399af328dec404420a8b55ca6)
+        ;
+
+        
+    
+    
+            var circle_marker_8406e29b30db1520cf5660f93fdd73e9 = L.circleMarker(
+                [37.7957, -122.2429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.525302824535999, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_bfe49c5d363c0c5fe6470a071ae775fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5590fcc89ee683cc73e37fe17a89b248 = $(`<div id="html_5590fcc89ee683cc73e37fe17a89b248" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94606</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 1.4%<br><b>Gentrification Intensity:</b> 0.723<br><b>Gentrification Rate:</b> 21.6%<br></div>`)[0];
+                popup_bfe49c5d363c0c5fe6470a071ae775fd.setContent(html_5590fcc89ee683cc73e37fe17a89b248);
+            
+        
+
+        circle_marker_8406e29b30db1520cf5660f93fdd73e9.bindPopup(popup_bfe49c5d363c0c5fe6470a071ae775fd)
+        ;
+
+        
+    
+    
+            var circle_marker_093e62480edd4a4edbcb0c4a2f1b9cc3 = L.circleMarker(
+                [37.4647, -122.2304],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.201562613864263, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_09e832c821025e371826e56a4eaa35a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5e9dca1d0f0c3698630f8c9e421b702 = $(`<div id="html_a5e9dca1d0f0c3698630f8c9e421b702" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94061</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.9%<br><b>Gentrification Intensity:</b> 0.657<br><b>Gentrification Rate:</b> 20.0%<br></div>`)[0];
+                popup_09e832c821025e371826e56a4eaa35a2.setContent(html_a5e9dca1d0f0c3698630f8c9e421b702);
+            
+        
+
+        circle_marker_093e62480edd4a4edbcb0c4a2f1b9cc3.bindPopup(popup_09e832c821025e371826e56a4eaa35a2)
+        ;
+
+        
+    
+    
+            var circle_marker_696e15d28331510dbe55cd7a5a33d028 = L.circleMarker(
+                [37.5735, -122.0469],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.179186646356563, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_80e70790c1b5791c685e0153351d1722 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78ba8d960b9b161d33e9563e27d7d8c0 = $(`<div id="html_78ba8d960b9b161d33e9563e27d7d8c0" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94555</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.1%<br><b>Gentrification Intensity:</b> 0.857<br><b>Gentrification Rate:</b> 24.6%<br></div>`)[0];
+                popup_80e70790c1b5791c685e0153351d1722.setContent(html_78ba8d960b9b161d33e9563e27d7d8c0);
+            
+        
+
+        circle_marker_696e15d28331510dbe55cd7a5a33d028.bindPopup(popup_80e70790c1b5791c685e0153351d1722)
+        ;
+
+        
+    
+    
+            var circle_marker_ff69d5d0aa987b5dcd9c5fe6b4df98a2 = L.circleMarker(
+                [37.3855, -122.088],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.107933142014788, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3e533d78b531a80906901eee19a35d05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ec85b9ada1821575f88717d76505442 = $(`<div id="html_8ec85b9ada1821575f88717d76505442" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94040</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 11.2%<br><b>Gentrification Intensity:</b> 0.638<br><b>Gentrification Rate:</b> 20.5%<br></div>`)[0];
+                popup_3e533d78b531a80906901eee19a35d05.setContent(html_8ec85b9ada1821575f88717d76505442);
+            
+        
+
+        circle_marker_ff69d5d0aa987b5dcd9c5fe6b4df98a2.bindPopup(popup_3e533d78b531a80906901eee19a35d05)
+        ;
+
+        
+    
+    
+            var circle_marker_ed52fb547adfa3577e3c5c0c413667bb = L.circleMarker(
+                [37.6196, -122.4816],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.46920050073529, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_fd15d539917167fada8d11ae1b254cfe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b88834843cfde1cf59f18bf12d2ad89d = $(`<div id="html_b88834843cfde1cf59f18bf12d2ad89d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94044</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 14.6%<br><b>Gentrification Intensity:</b> 0.917<br><b>Gentrification Rate:</b> 25.6%<br></div>`)[0];
+                popup_fd15d539917167fada8d11ae1b254cfe.setContent(html_b88834843cfde1cf59f18bf12d2ad89d);
+            
+        
+
+        circle_marker_ed52fb547adfa3577e3c5c0c413667bb.bindPopup(popup_fd15d539917167fada8d11ae1b254cfe)
+        ;
+
+        
+    
+    
+            var circle_marker_a43f4734424097cd162658726c00701d = L.circleMarker(
+                [37.3163, -121.9356],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_98fd24b7d554dbd5dbd0b8d1dfe22ae8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db0dd47f3b80e4ac16632f6399f6564c = $(`<div id="html_db0dd47f3b80e4ac16632f6399f6564c" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95128</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.1%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_98fd24b7d554dbd5dbd0b8d1dfe22ae8.setContent(html_db0dd47f3b80e4ac16632f6399f6564c);
+            
+        
+
+        circle_marker_a43f4734424097cd162658726c00701d.bindPopup(popup_98fd24b7d554dbd5dbd0b8d1dfe22ae8)
+        ;
+
+        
+    
+    
+            var circle_marker_8ae7eb44ca1cd481bb1b394cd1c8d332 = L.circleMarker(
+                [37.954, -122.0737],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.089397818409338, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_b32937a3bdbe6e9251cacc1d7671946e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d36c6619d08dc39b25b04ca2a254f909 = $(`<div id="html_d36c6619d08dc39b25b04ca2a254f909" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94523</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.8%<br><b>Gentrification Intensity:</b> 1.044<br><b>Gentrification Rate:</b> 29.3%<br></div>`)[0];
+                popup_b32937a3bdbe6e9251cacc1d7671946e.setContent(html_d36c6619d08dc39b25b04ca2a254f909);
+            
+        
+
+        circle_marker_8ae7eb44ca1cd481bb1b394cd1c8d332.bindPopup(popup_b32937a3bdbe6e9251cacc1d7671946e)
+        ;
+
+        
+    
+    
+            var circle_marker_2bac71833927426f6a93b4d71aefb403 = L.circleMarker(
+                [37.5538, -122.27],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.238183731174402, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_2c3f492a55bfc66d8281c616cd9cffdd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9789be2252d2306fe6f62f12457cb183 = $(`<div id="html_9789be2252d2306fe6f62f12457cb183" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94404</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.1%<br><b>Gentrification Intensity:</b> 0.664<br><b>Gentrification Rate:</b> 20.6%<br></div>`)[0];
+                popup_2c3f492a55bfc66d8281c616cd9cffdd.setContent(html_9789be2252d2306fe6f62f12457cb183);
+            
+        
+
+        circle_marker_2bac71833927426f6a93b4d71aefb403.bindPopup(popup_2c3f492a55bfc66d8281c616cd9cffdd)
+        ;
+
+        
+    
+    
+            var circle_marker_4edb140e0f85116edee3734963773925 = L.circleMarker(
+                [37.4815, -122.2091],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.677613488187937, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d885a551bca82db5592c78139befc8fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d40ef10e22788536a299ded4e1ab4944 = $(`<div id="html_d40ef10e22788536a299ded4e1ab4944" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94063</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 6.2%<br><b>Gentrification Intensity:</b> 0.549<br><b>Gentrification Rate:</b> 17.8%<br></div>`)[0];
+                popup_d885a551bca82db5592c78139befc8fc.setContent(html_d40ef10e22788536a299ded4e1ab4944);
+            
+        
+
+        circle_marker_4edb140e0f85116edee3734963773925.bindPopup(popup_d885a551bca82db5592c78139befc8fc)
+        ;
+
+        
+    
+    
+            var circle_marker_6b8353fe0c7f8281cd44f6c52f80009b = L.circleMarker(
+                [37.5735, -122.3225],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.04062506953825, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_284a0162e2565dbe76c5f833caae83a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0878ef8001b523646c7d1fdaa727e6c = $(`<div id="html_b0878ef8001b523646c7d1fdaa727e6c" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94401</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 14.1%<br><b>Gentrification Intensity:</b> 0.624<br><b>Gentrification Rate:</b> 19.5%<br></div>`)[0];
+                popup_284a0162e2565dbe76c5f833caae83a4.setContent(html_b0878ef8001b523646c7d1fdaa727e6c);
+            
+        
+
+        circle_marker_6b8353fe0c7f8281cd44f6c52f80009b.bindPopup(popup_284a0162e2565dbe76c5f833caae83a4)
+        ;
+
+        
+    
+    
+            var circle_marker_30d235df6aee553b5cc453b4d16b91cb = L.circleMarker(
+                [37.7587, -122.433],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.304000506117806, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_6dc1396e5e7a921c494a5f1dc9b1bd28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_220ba91ed2c5a20a3e3f44da0a988f85 = $(`<div id="html_220ba91ed2c5a20a3e3f44da0a988f85" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94114</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.1%<br><b>Gentrification Intensity:</b> 0.883<br><b>Gentrification Rate:</b> 24.9%<br></div>`)[0];
+                popup_6dc1396e5e7a921c494a5f1dc9b1bd28.setContent(html_220ba91ed2c5a20a3e3f44da0a988f85);
+            
+        
+
+        circle_marker_30d235df6aee553b5cc453b4d16b91cb.bindPopup(popup_6dc1396e5e7a921c494a5f1dc9b1bd28)
+        ;
+
+        
+    
+    
+            var circle_marker_45f2014a252a3299fc36099712edb840 = L.circleMarker(
+                [37.3249, -121.9153],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0e2e5f0099f8a027ea371142359b242f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60eda294fd67502c0fcc34bb108a7e6e = $(`<div id="html_60eda294fd67502c0fcc34bb108a7e6e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95126</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 11.1%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_0e2e5f0099f8a027ea371142359b242f.setContent(html_60eda294fd67502c0fcc34bb108a7e6e);
+            
+        
+
+        circle_marker_45f2014a252a3299fc36099712edb840.bindPopup(popup_0e2e5f0099f8a027ea371142359b242f)
+        ;
+
+        
+    
+    
+            var circle_marker_05c71c21f0e95b76e965e4818033dee9 = L.circleMarker(
+                [37.7813, -122.4167],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.62207251232268, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d0da9c949bb441f7e49dbf8de05c966e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe75357eadce785eccbbdff4a8186920 = $(`<div id="html_fe75357eadce785eccbbdff4a8186920" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94102</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -3.3%<br><b>Gentrification Intensity:</b> 0.743<br><b>Gentrification Rate:</b> 22.4%<br></div>`)[0];
+                popup_d0da9c949bb441f7e49dbf8de05c966e.setContent(html_fe75357eadce785eccbbdff4a8186920);
+            
+        
+
+        circle_marker_05c71c21f0e95b76e965e4818033dee9.bindPopup(popup_d0da9c949bb441f7e49dbf8de05c966e)
+        ;
+
+        
+    
+    
+            var circle_marker_d60cdf37f91148947d0e98822c74dd10 = L.circleMarker(
+                [37.7856, -122.4358],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.777070237339458, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_11eaacab4295cf2ad7135000338cb69b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cec0efe7bd51f4a04689014272ebaa5f = $(`<div id="html_cec0efe7bd51f4a04689014272ebaa5f" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94115</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 14.0%<br><b>Gentrification Intensity:</b> 0.775<br><b>Gentrification Rate:</b> 21.2%<br></div>`)[0];
+                popup_11eaacab4295cf2ad7135000338cb69b.setContent(html_cec0efe7bd51f4a04689014272ebaa5f);
+            
+        
+
+        circle_marker_d60cdf37f91148947d0e98822c74dd10.bindPopup(popup_11eaacab4295cf2ad7135000338cb69b)
+        ;
+
+        
+    
+    
+            var circle_marker_6e62d9c0d6fb080e97631a258a5d16bf = L.circleMarker(
+                [37.8365, -122.2804],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.744233736652976, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_89c55f3f10c630c4c3c27e328a92b195 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b634ef422db1ea3ba383efdd908aea50 = $(`<div id="html_b634ef422db1ea3ba383efdd908aea50" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94608</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 2.8%<br><b>Gentrification Intensity:</b> 0.768<br><b>Gentrification Rate:</b> 22.7%<br></div>`)[0];
+                popup_89c55f3f10c630c4c3c27e328a92b195.setContent(html_b634ef422db1ea3ba383efdd908aea50);
+            
+        
+
+        circle_marker_6e62d9c0d6fb080e97631a258a5d16bf.bindPopup(popup_89c55f3f10c630c4c3c27e328a92b195)
+        ;
+
+        
+    
+    
+            var circle_marker_31486ba4d231e9c73e61652ccad25914 = L.circleMarker(
+                [37.8958, -122.5339],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.378886213179783, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_df4b945b48531cfcc1f7e21217401f2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0922c5618e452ef66a4486b9a3ab402 = $(`<div id="html_b0922c5618e452ef66a4486b9a3ab402" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94941</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 28.1%<br><b>Gentrification Intensity:</b> 1.309<br><b>Gentrification Rate:</b> 32.8%<br></div>`)[0];
+                popup_df4b945b48531cfcc1f7e21217401f2e.setContent(html_b0922c5618e452ef66a4486b9a3ab402);
+            
+        
+
+        circle_marker_31486ba4d231e9c73e61652ccad25914.bindPopup(popup_df4b945b48531cfcc1f7e21217401f2e)
+        ;
+
+        
+    
+    
+            var circle_marker_15d9cfa11644bd372d0e49a920d6adc4 = L.circleMarker(
+                [37.7725, -122.4147],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.732718750814216, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_c4b715693ce18585faa83a42091e732f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf7e75ee08c077a0b274bd451a5f90b7 = $(`<div id="html_bf7e75ee08c077a0b274bd451a5f90b7" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94103</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -4.4%<br><b>Gentrification Intensity:</b> 1.176<br><b>Gentrification Rate:</b> 31.3%<br></div>`)[0];
+                popup_c4b715693ce18585faa83a42091e732f.setContent(html_bf7e75ee08c077a0b274bd451a5f90b7);
+            
+        
+
+        circle_marker_15d9cfa11644bd372d0e49a920d6adc4.bindPopup(popup_c4b715693ce18585faa83a42091e732f)
+        ;
+
+        
+    
+    
+            var circle_marker_b3afd062a7224a6049c21766e4343191 = L.circleMarker(
+                [37.3864, -121.88],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_5aff06b8ab3036d9324166e5cc04dac1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ac854215f0746a7e0aa520c6d016b2f = $(`<div id="html_8ac854215f0746a7e0aa520c6d016b2f" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95131</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.3%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_5aff06b8ab3036d9324166e5cc04dac1.setContent(html_8ac854215f0746a7e0aa520c6d016b2f);
+            
+        
+
+        circle_marker_b3afd062a7224a6049c21766e4343191.bindPopup(popup_5aff06b8ab3036d9324166e5cc04dac1)
+        ;
+
+        
+    
+    
+            var circle_marker_37195072ec93a163c9a7e28ab3954405 = L.circleMarker(
+                [37.8126, -122.2443],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.812490916595628, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_6d5213cf46c5c07036cd021547ca0422 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2046e472c1f9d83c4657c8e05c8a2d4e = $(`<div id="html_2046e472c1f9d83c4657c8e05c8a2d4e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94610</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -2.8%<br><b>Gentrification Intensity:</b> 0.782<br><b>Gentrification Rate:</b> 22.9%<br></div>`)[0];
+                popup_6d5213cf46c5c07036cd021547ca0422.setContent(html_2046e472c1f9d83c4657c8e05c8a2d4e);
+            
+        
+
+        circle_marker_37195072ec93a163c9a7e28ab3954405.bindPopup(popup_6d5213cf46c5c07036cd021547ca0422)
+        ;
+
+        
+    
+    
+            var circle_marker_fbe8c7cf04033f027f8959b4e4a321f6 = L.circleMarker(
+                [37.745, -122.4383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.65971213794935, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_315dff79f499b2664f933af318a09fa0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c364aa778cf2f63a6f380ce50788388 = $(`<div id="html_8c364aa778cf2f63a6f380ce50788388" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94131</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 20.0%<br><b>Gentrification Intensity:</b> 0.956<br><b>Gentrification Rate:</b> 26.6%<br></div>`)[0];
+                popup_315dff79f499b2664f933af318a09fa0.setContent(html_8c364aa778cf2f63a6f380ce50788388);
+            
+        
+
+        circle_marker_fbe8c7cf04033f027f8959b4e4a321f6.bindPopup(popup_315dff79f499b2664f933af318a09fa0)
+        ;
+
+        
+    
+    
+            var circle_marker_35ede8faba08c611e9f9b89c0aae29a3 = L.circleMarker(
+                [37.4056, -122.0775],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.226498832247128, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_307130eb366a6ea02d663da58ac9c9d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a97475a4c2c00e9a6a06495e58fddb3 = $(`<div id="html_5a97475a4c2c00e9a6a06495e58fddb3" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94043</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 12.0%<br><b>Gentrification Intensity:</b> 0.662<br><b>Gentrification Rate:</b> 20.9%<br></div>`)[0];
+                popup_307130eb366a6ea02d663da58ac9c9d9.setContent(html_5a97475a4c2c00e9a6a06495e58fddb3);
+            
+        
+
+        circle_marker_35ede8faba08c611e9f9b89c0aae29a3.bindPopup(popup_307130eb366a6ea02d663da58ac9c9d9)
+        ;
+
+        
+    
+    
+            var circle_marker_35b00d263e247807bc07cb7a6c8cff8d = L.circleMarker(
+                [37.4969, -122.2674],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.928880121468629, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_c334cbd8bc831be005575c06037b7bd3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b51626be6c45b8ce05badfdf3f1f53b6 = $(`<div id="html_b51626be6c45b8ce05badfdf3f1f53b6" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94070</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.6%<br><b>Gentrification Intensity:</b> 0.601<br><b>Gentrification Rate:</b> 19.1%<br></div>`)[0];
+                popup_c334cbd8bc831be005575c06037b7bd3.setContent(html_b51626be6c45b8ce05badfdf3f1f53b6);
+            
+        
+
+        circle_marker_35b00d263e247807bc07cb7a6c8cff8d.bindPopup(popup_c334cbd8bc831be005575c06037b7bd3)
+        ;
+
+        
+    
+    
+            var circle_marker_5b1dbe0479b3e3b2db3e27c0170be779 = L.circleMarker(
+                [37.9194, -122.0259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.818857885997534, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_7cc002330f4e53c4364d4337a1ef30a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e1034d0ef3432d90d6ccf7adbd383ba = $(`<div id="html_3e1034d0ef3432d90d6ccf7adbd383ba" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94598</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.4%<br><b>Gentrification Intensity:</b> 0.989<br><b>Gentrification Rate:</b> 28.3%<br></div>`)[0];
+                popup_7cc002330f4e53c4364d4337a1ef30a5.setContent(html_3e1034d0ef3432d90d6ccf7adbd383ba);
+            
+        
+
+        circle_marker_5b1dbe0479b3e3b2db3e27c0170be779.bindPopup(popup_7cc002330f4e53c4364d4337a1ef30a5)
+        ;
+
+        
+    
+    
+            var circle_marker_38ae66295664029f6275e661ee40c1ae = L.circleMarker(
+                [37.7621, -122.3971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.67563993631898, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_f505bf6a65796dd1da1a75ef58c6eb00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa72b8a83c7deca642dd5d7cc214f2a3 = $(`<div id="html_fa72b8a83c7deca642dd5d7cc214f2a3" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94107</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 9.8%<br><b>Gentrification Intensity:</b> 1.369<br><b>Gentrification Rate:</b> 34.6%<br></div>`)[0];
+                popup_f505bf6a65796dd1da1a75ef58c6eb00.setContent(html_fa72b8a83c7deca642dd5d7cc214f2a3);
+            
+        
+
+        circle_marker_38ae66295664029f6275e661ee40c1ae.bindPopup(popup_f505bf6a65796dd1da1a75ef58c6eb00)
+        ;
+
+        
+    
+    
+            var circle_marker_e7972df3d87d191c1868d2d568a8c6be = L.circleMarker(
+                [37.4087, -121.9406],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_cc30927577a0a57014daebd29fb2965d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5738cbb9df2266548861828fdbb935aa = $(`<div id="html_5738cbb9df2266548861828fdbb935aa" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95134</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.3%<br><b>Gentrification Intensity:</b> 0.000<br><b>Gentrification Rate:</b> 0.0%<br></div>`)[0];
+                popup_cc30927577a0a57014daebd29fb2965d.setContent(html_5738cbb9df2266548861828fdbb935aa);
+            
+        
+
+        circle_marker_e7972df3d87d191c1868d2d568a8c6be.bindPopup(popup_cc30927577a0a57014daebd29fb2965d)
+        ;
+
+        
+    
+    
+            var circle_marker_eddf771dabb0489866b89fc61dc1dc0d = L.circleMarker(
+                [37.8961, -122.1119],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.638825533962482, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d9dae6ba9fa6e8446b839ca7cecabd8b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e56aca5efcec5a3d47cc86d48290e5c = $(`<div id="html_2e56aca5efcec5a3d47cc86d48290e5c" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94549</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.3%<br><b>Gentrification Intensity:</b> 0.952<br><b>Gentrification Rate:</b> 26.6%<br></div>`)[0];
+                popup_d9dae6ba9fa6e8446b839ca7cecabd8b.setContent(html_2e56aca5efcec5a3d47cc86d48290e5c);
+            
+        
+
+        circle_marker_eddf771dabb0489866b89fc61dc1dc0d.bindPopup(popup_d9dae6ba9fa6e8446b839ca7cecabd8b)
+        ;
+
+        
+    
+    
+            var circle_marker_41565e0ad8ae7f97d8b8dbb6612bb22a = L.circleMarker(
+                [37.2417, -121.9554],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.857093992519955, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_f217397f623fc0e0daed50921929642d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6951e827ceb7209ddc2d2793321592fc = $(`<div id="html_6951e827ceb7209ddc2d2793321592fc" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95032</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 20.0%<br><b>Gentrification Intensity:</b> 0.791<br><b>Gentrification Rate:</b> 22.7%<br></div>`)[0];
+                popup_f217397f623fc0e0daed50921929642d.setContent(html_6951e827ceb7209ddc2d2793321592fc);
+            
+        
+
+        circle_marker_41565e0ad8ae7f97d8b8dbb6612bb22a.bindPopup(popup_f217397f623fc0e0daed50921929642d)
+        ;
+
+        
+    
+    
+            var circle_marker_faded22479bf4ef1504bf0077dd8168b = L.circleMarker(
+                [37.3108, -121.9623],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.117021600813326, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_75b30b25da8fea8b3b3a25c9ac62fef3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c33da07f7a77f65981187d041676687 = $(`<div id="html_0c33da07f7a77f65981187d041676687" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95117</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.9%<br><b>Gentrification Intensity:</b> 1.255<br><b>Gentrification Rate:</b> 32.4%<br></div>`)[0];
+                popup_75b30b25da8fea8b3b3a25c9ac62fef3.setContent(html_0c33da07f7a77f65981187d041676687);
+            
+        
+
+        circle_marker_faded22479bf4ef1504bf0077dd8168b.bindPopup(popup_75b30b25da8fea8b3b3a25c9ac62fef3)
+        ;
+
+        
+    
+    
+            var circle_marker_c36783a3b0accaabb4f90a0e6f9e1695 = L.circleMarker(
+                [37.5174, -122.2927],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.321739950818294, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_8bbaf6c54c66513c6c443cb335fede97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cca35c96d956b9b9cc535994471432fe = $(`<div id="html_cca35c96d956b9b9cc535994471432fe" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94002</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.5%<br><b>Gentrification Intensity:</b> 0.681<br><b>Gentrification Rate:</b> 20.9%<br></div>`)[0];
+                popup_8bbaf6c54c66513c6c443cb335fede97.setContent(html_cca35c96d956b9b9cc535994471432fe);
+            
+        
+
+        circle_marker_c36783a3b0accaabb4f90a0e6f9e1695.bindPopup(popup_8bbaf6c54c66513c6c443cb335fede97)
+        ;
+
+        
+    
+    
+            var circle_marker_84efc4803b9fbee581abf8e35ef107a6 = L.circleMarker(
+                [37.418, -122.1274],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.663021123455994, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3daae35ad5a141d85b09c1572c222375 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58c0a7bc8826e2c9b7a49a97586a2dae = $(`<div id="html_58c0a7bc8826e2c9b7a49a97586a2dae" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94306</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.4%<br><b>Gentrification Intensity:</b> 0.751<br><b>Gentrification Rate:</b> 22.6%<br></div>`)[0];
+                popup_3daae35ad5a141d85b09c1572c222375.setContent(html_58c0a7bc8826e2c9b7a49a97586a2dae);
+            
+        
+
+        circle_marker_84efc4803b9fbee581abf8e35ef107a6.bindPopup(popup_3daae35ad5a141d85b09c1572c222375)
+        ;
+
+        
+    
+    
+            var circle_marker_54c5ae0b305eb2b2d8c8f518ef583aea = L.circleMarker(
+                [37.8664, -122.257],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.071031840683665, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_6d74b04057a87ad574028ca601341509 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bdca6e66f5c25b26f400e12a47772405 = $(`<div id="html_bdca6e66f5c25b26f400e12a47772405" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94704</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.7%<br><b>Gentrification Intensity:</b> 0.630<br><b>Gentrification Rate:</b> 19.3%<br></div>`)[0];
+                popup_6d74b04057a87ad574028ca601341509.setContent(html_bdca6e66f5c25b26f400e12a47772405);
+            
+        
+
+        circle_marker_54c5ae0b305eb2b2d8c8f518ef583aea.bindPopup(popup_6d74b04057a87ad574028ca601341509)
+        ;
+
+        
+    
+    
+            var circle_marker_fd24692c9c0869d43b0b1384af146c04 = L.circleMarker(
+                [37.8071, -122.2851],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.273978918833567, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_a88c616bac9cdbb1acdc2b83f2990396 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67b8b7afe3507ea5624d0ebac4a24f07 = $(`<div id="html_67b8b7afe3507ea5624d0ebac4a24f07" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94607</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -2.9%<br><b>Gentrification Intensity:</b> 0.877<br><b>Gentrification Rate:</b> 25.1%<br></div>`)[0];
+                popup_a88c616bac9cdbb1acdc2b83f2990396.setContent(html_67b8b7afe3507ea5624d0ebac4a24f07);
+            
+        
+
+        circle_marker_fd24692c9c0869d43b0b1384af146c04.bindPopup(popup_a88c616bac9cdbb1acdc2b83f2990396)
+        ;
+
+        
+    
+    
+            var circle_marker_23f22fe90e415673487e68e1d5a9ae41 = L.circleMarker(
+                [37.9504, -122.0263],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.008450725212114, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d19c832528610ab7aafc202e9022b8ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91a6aeb6b1345cb5815fd9918b3cd88d = $(`<div id="html_91a6aeb6b1345cb5815fd9918b3cd88d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94518</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 25.0%<br><b>Gentrification Intensity:</b> 1.027<br><b>Gentrification Rate:</b> 29.0%<br></div>`)[0];
+                popup_d19c832528610ab7aafc202e9022b8ed.setContent(html_91a6aeb6b1345cb5815fd9918b3cd88d);
+            
+        
+
+        circle_marker_23f22fe90e415673487e68e1d5a9ae41.bindPopup(popup_d19c832528610ab7aafc202e9022b8ed)
+        ;
+
+        
+    
+    
+            var circle_marker_6664acf4128f5a516847ff52a926f80b = L.circleMarker(
+                [37.5507, -122.3276],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.295752766394116, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3480e345b2cbbf903254b3b95ca70c7a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_354357ce9243c38fcc99081b0e81821a = $(`<div id="html_354357ce9243c38fcc99081b0e81821a" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94402</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 17.4%<br><b>Gentrification Intensity:</b> 0.676<br><b>Gentrification Rate:</b> 20.6%<br></div>`)[0];
+                popup_3480e345b2cbbf903254b3b95ca70c7a.setContent(html_354357ce9243c38fcc99081b0e81821a);
+            
+        
+
+        circle_marker_6664acf4128f5a516847ff52a926f80b.bindPopup(popup_3480e345b2cbbf903254b3b95ca70c7a)
+        ;
+
+        
+    
+    
+            var circle_marker_d6e3a0d3e50992f29de5692e774bf8f6 = L.circleMarker(
+                [37.8002, -122.4091],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.34039380585486, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_01655d6ef122e27a176445d085c78d36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b03696e1b9eb86ed8913bfacc4fb884e = $(`<div id="html_b03696e1b9eb86ed8913bfacc4fb884e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94133</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.6%<br><b>Gentrification Intensity:</b> 1.096<br><b>Gentrification Rate:</b> 29.2%<br></div>`)[0];
+                popup_01655d6ef122e27a176445d085c78d36.setContent(html_b03696e1b9eb86ed8913bfacc4fb884e);
+            
+        
+
+        circle_marker_d6e3a0d3e50992f29de5692e774bf8f6.bindPopup(popup_01655d6ef122e27a176445d085c78d36)
+        ;
+
+        
+    
+    
+            var circle_marker_959ccabec41b3e166f52d758507f7a5a = L.circleMarker(
+                [37.3983, -122.0006],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.713037390339927, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_133f744e02936912b29fb0181fd10e26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af45d55e2e4ed14f0689ff259da47329 = $(`<div id="html_af45d55e2e4ed14f0689ff259da47329" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94089</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 10.6%<br><b>Gentrification Intensity:</b> 0.557<br><b>Gentrification Rate:</b> 18.5%<br></div>`)[0];
+                popup_133f744e02936912b29fb0181fd10e26.setContent(html_af45d55e2e4ed14f0689ff259da47329);
+            
+        
+
+        circle_marker_959ccabec41b3e166f52d758507f7a5a.bindPopup(popup_133f744e02936912b29fb0181fd10e26)
+        ;
+
+        
+    
+    
+            var circle_marker_9c979fd78f5fcb837252ac306a187f52 = L.circleMarker(
+                [37.3924, -121.9623],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.608960165279932, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_b4cb3570e540832a0701770dcd3c6dc5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9372ba6a65fd5f091c4c2ae3483b6e8a = $(`<div id="html_9372ba6a65fd5f091c4c2ae3483b6e8a" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95054</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 22.8%<br><b>Gentrification Intensity:</b> 0.740<br><b>Gentrification Rate:</b> 22.5%<br></div>`)[0];
+                popup_b4cb3570e540832a0701770dcd3c6dc5.setContent(html_9372ba6a65fd5f091c4c2ae3483b6e8a);
+            
+        
+
+        circle_marker_9c979fd78f5fcb837252ac306a187f52.bindPopup(popup_b4cb3570e540832a0701770dcd3c6dc5)
+        ;
+
+        
+    
+    
+            var circle_marker_f2186628407a96486bb761e2b9ce4e39 = L.circleMarker(
+                [37.7999, -122.4342],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.701734128543228, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_f698adb69c4cce837abe300b4f1a0c41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e41a4d94d4d7d31c41f11515e9a19726 = $(`<div id="html_e41a4d94d4d7d31c41f11515e9a19726" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94123</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 23.5%<br><b>Gentrification Intensity:</b> 0.965<br><b>Gentrification Rate:</b> 26.9%<br></div>`)[0];
+                popup_f698adb69c4cce837abe300b4f1a0c41.setContent(html_e41a4d94d4d7d31c41f11515e9a19726);
+            
+        
+
+        circle_marker_f2186628407a96486bb761e2b9ce4e39.bindPopup(popup_f698adb69c4cce837abe300b4f1a0c41)
+        ;
+
+        
+    
+    
+            var circle_marker_0cc4ec521641a861550f0f2370d49de8 = L.circleMarker(
+                [37.8361, -122.2637],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.795417357978561, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_e436703eb714b68b4a6da60114b61e0d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d639e5eb235839ddaa18422b3ab5192 = $(`<div id="html_0d639e5eb235839ddaa18422b3ab5192" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94609</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 0.4%<br><b>Gentrification Intensity:</b> 0.779<br><b>Gentrification Rate:</b> 22.9%<br></div>`)[0];
+                popup_e436703eb714b68b4a6da60114b61e0d.setContent(html_0d639e5eb235839ddaa18422b3ab5192);
+            
+        
+
+        circle_marker_0cc4ec521641a861550f0f2370d49de8.bindPopup(popup_e436703eb714b68b4a6da60114b61e0d)
+        ;
+
+        
+    
+    
+            var circle_marker_2bfbab909de8d5e1b0478da38cf84eb6 = L.circleMarker(
+                [37.6004, -122.402],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.660772517031017, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_2de8f8422d7cfc8d94f5d39d4cce66dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb4d4f0899fd546874e7f3efebe2583d = $(`<div id="html_bb4d4f0899fd546874e7f3efebe2583d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94030</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 15.3%<br><b>Gentrification Intensity:</b> 0.546<br><b>Gentrification Rate:</b> 17.7%<br></div>`)[0];
+                popup_2de8f8422d7cfc8d94f5d39d4cce66dd.setContent(html_bb4d4f0899fd546874e7f3efebe2583d);
+            
+        
+
+        circle_marker_2bfbab909de8d5e1b0478da38cf84eb6.bindPopup(popup_2de8f8422d7cfc8d94f5d39d4cce66dd)
+        ;
+
+        
+    
+    
+            var circle_marker_0beec845f36b2b5394d3baefa91a8e90 = L.circleMarker(
+                [37.3886, -122.0177],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.052792245813594, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_538d8bdd5aa94477b600685aeba81dc8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a39d59735c39b44cf27890c0bd193084 = $(`<div id="html_a39d59735c39b44cf27890c0bd193084" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94085</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.7%<br><b>Gentrification Intensity:</b> 0.626<br><b>Gentrification Rate:</b> 20.6%<br></div>`)[0];
+                popup_538d8bdd5aa94477b600685aeba81dc8.setContent(html_a39d59735c39b44cf27890c0bd193084);
+            
+        
+
+        circle_marker_0beec845f36b2b5394d3baefa91a8e90.bindPopup(popup_538d8bdd5aa94477b600685aeba81dc8)
+        ;
+
+        
+    
+    
+            var circle_marker_891230c90a056f5cdbf31720a8b7f9df = L.circleMarker(
+                [37.9182, -122.0717],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.560672801243776, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_b5c25f15a25feec669923f3715a934ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da3ab260986b4b0201dc8e5f30c70346 = $(`<div id="html_da3ab260986b4b0201dc8e5f30c70346" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94597</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 19.6%<br><b>Gentrification Intensity:</b> 1.141<br><b>Gentrification Rate:</b> 31.3%<br></div>`)[0];
+                popup_b5c25f15a25feec669923f3715a934ed.setContent(html_da3ab260986b4b0201dc8e5f30c70346);
+            
+        
+
+        circle_marker_891230c90a056f5cdbf31720a8b7f9df.bindPopup(popup_b5c25f15a25feec669923f3715a934ed)
+        ;
+
+        
+    
+    
+            var circle_marker_0a3c490f383176096894457dffeff695 = L.circleMarker(
+                [37.9053, -122.0549],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.871457054914305, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_f8ad4e74f47d3a97c2d89d7d238448b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c0357420a8a541d375f455b70b00ff17 = $(`<div id="html_c0357420a8a541d375f455b70b00ff17" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94596</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 7.3%<br><b>Gentrification Intensity:</b> 1.205<br><b>Gentrification Rate:</b> 32.0%<br></div>`)[0];
+                popup_f8ad4e74f47d3a97c2d89d7d238448b1.setContent(html_c0357420a8a541d375f455b70b00ff17);
+            
+        
+
+        circle_marker_0a3c490f383176096894457dffeff695.bindPopup(popup_f8ad4e74f47d3a97c2d89d7d238448b1)
+        ;
+
+        
+    
+    
+            var circle_marker_d3ec607e9777161cbe44ad1b4964fb69 = L.circleMarker(
+                [37.3391, -121.9016],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.732958102144535, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_86a082322a857f342c4fb2df73d9f48e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11dd675cc6ecc2a5b0ace3267aeaee5d = $(`<div id="html_11dd675cc6ecc2a5b0ace3267aeaee5d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 95110</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.4%<br><b>Gentrification Intensity:</b> 0.766<br><b>Gentrification Rate:</b> 22.7%<br></div>`)[0];
+                popup_86a082322a857f342c4fb2df73d9f48e.setContent(html_11dd675cc6ecc2a5b0ace3267aeaee5d);
+            
+        
+
+        circle_marker_d3ec607e9777161cbe44ad1b4964fb69.bindPopup(popup_86a082322a857f342c4fb2df73d9f48e)
+        ;
+
+        
+    
+    
+            var circle_marker_dcecf881a3ee244f87e0c747b2b0335b = L.circleMarker(
+                [37.863, -122.2749],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.162944421539654, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_d0c06128768a3ded1f6f8bbf1256015b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8029babb9cf888d8469da3b2ccab6369 = $(`<div id="html_8029babb9cf888d8469da3b2ccab6369" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94703</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 7.4%<br><b>Gentrification Intensity:</b> 0.649<br><b>Gentrification Rate:</b> 19.6%<br></div>`)[0];
+                popup_d0c06128768a3ded1f6f8bbf1256015b.setContent(html_8029babb9cf888d8469da3b2ccab6369);
+            
+        
+
+        circle_marker_dcecf881a3ee244f87e0c747b2b0335b.bindPopup(popup_d0c06128768a3ded1f6f8bbf1256015b)
+        ;
+
+        
+    
+    
+            var circle_marker_fbd4546d03a5afd731b888eec5723c06 = L.circleMarker(
+                [37.4443, -122.1497],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.900600045196848, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_3bd323f28b72ef00cfa87a6e6356bb04 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f418f0cf098f0f198bd44ba65264f6c5 = $(`<div id="html_f418f0cf098f0f198bd44ba65264f6c5" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94301</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 16.1%<br><b>Gentrification Intensity:</b> 1.005<br><b>Gentrification Rate:</b> 28.2%<br></div>`)[0];
+                popup_3bd323f28b72ef00cfa87a6e6356bb04.setContent(html_f418f0cf098f0f198bd44ba65264f6c5);
+            
+        
+
+        circle_marker_fbd4546d03a5afd731b888eec5723c06.bindPopup(popup_3bd323f28b72ef00cfa87a6e6356bb04)
+        ;
+
+        
+    
+    
+            var circle_marker_0380d35c32c9a6cd88c4990b3d359497 = L.circleMarker(
+                [37.8656, -122.2851],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.268627067324555, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_9d44cf70b5b916fabb61b6b2b15bb92f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35dd42a9dfda0f4df40ebbf3650d7060 = $(`<div id="html_35dd42a9dfda0f4df40ebbf3650d7060" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94702</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 13.6%<br><b>Gentrification Intensity:</b> 0.671<br><b>Gentrification Rate:</b> 20.0%<br></div>`)[0];
+                popup_9d44cf70b5b916fabb61b6b2b15bb92f.setContent(html_35dd42a9dfda0f4df40ebbf3650d7060);
+            
+        
+
+        circle_marker_0380d35c32c9a6cd88c4990b3d359497.bindPopup(popup_9d44cf70b5b916fabb61b6b2b15bb92f)
+        ;
+
+        
+    
+    
+            var circle_marker_504304c910261dde47a06da1a4bbc4d6 = L.circleMarker(
+                [37.3893, -122.0783],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.351090572515094, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_beab35941ccca64e786e4ed4f15aef7e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2fcd4fb958a3020569780f880d063142 = $(`<div id="html_2fcd4fb958a3020569780f880d063142" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94041</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 11.3%<br><b>Gentrification Intensity:</b> 0.893<br><b>Gentrification Rate:</b> 25.8%<br></div>`)[0];
+                popup_beab35941ccca64e786e4ed4f15aef7e.setContent(html_2fcd4fb958a3020569780f880d063142);
+            
+        
+
+        circle_marker_504304c910261dde47a06da1a4bbc4d6.bindPopup(popup_beab35941ccca64e786e4ed4f15aef7e)
+        ;
+
+        
+    
+    
+            var circle_marker_5a83a6eeef6dffb6743a2ebd330ee793 = L.circleMarker(
+                [37.8085, -122.2668],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.41200638818219, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_4c68e2b91e0171982a18edd096cb91c0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a8f5b7d8f688f0771f33a23199b057d = $(`<div id="html_6a8f5b7d8f688f0771f33a23199b057d" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94612</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -15.8%<br><b>Gentrification Intensity:</b> 0.700<br><b>Gentrification Rate:</b> 21.1%<br></div>`)[0];
+                popup_4c68e2b91e0171982a18edd096cb91c0.setContent(html_6a8f5b7d8f688f0771f33a23199b057d);
+            
+        
+
+        circle_marker_5a83a6eeef6dffb6743a2ebd330ee793.bindPopup(popup_4c68e2b91e0171982a18edd096cb91c0)
+        ;
+
+        
+    
+    
+            var circle_marker_f399b8fb31e07eebac9b2cbb4bdc4e83 = L.circleMarker(
+                [37.6586, -122.0472],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.978913787156426, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_29d22da46a2979b78ba3b39c0b104c8b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ad22648569822ad86100db6ca959c89 = $(`<div id="html_1ad22648569822ad86100db6ca959c89" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94542</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 18.9%<br><b>Gentrification Intensity:</b> 0.816<br><b>Gentrification Rate:</b> 24.5%<br></div>`)[0];
+                popup_29d22da46a2979b78ba3b39c0b104c8b.setContent(html_1ad22648569822ad86100db6ca959c89);
+            
+        
+
+        circle_marker_f399b8fb31e07eebac9b2cbb4bdc4e83.bindPopup(popup_29d22da46a2979b78ba3b39c0b104c8b)
+        ;
+
+        
+    
+    
+            var circle_marker_8f263581df462f54560fdedbe0d2736c = L.circleMarker(
+                [37.7864, -122.3892],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.115560053958951, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_fd9dfed7afba099ce8799330513fe14e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2caac7f85bc2e53c2147a0ef90d2203e = $(`<div id="html_2caac7f85bc2e53c2147a0ef90d2203e" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94105</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 8.8%<br><b>Gentrification Intensity:</b> 1.049<br><b>Gentrification Rate:</b> 28.8%<br></div>`)[0];
+                popup_fd9dfed7afba099ce8799330513fe14e.setContent(html_2caac7f85bc2e53c2147a0ef90d2203e);
+            
+        
+
+        circle_marker_8f263581df462f54560fdedbe0d2736c.bindPopup(popup_fd9dfed7afba099ce8799330513fe14e)
+        ;
+
+        
+    
+    
+            var circle_marker_1923026af5a996f9a8b62639973d81db = L.circleMarker(
+                [37.7929, -122.4079],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.475054733235146, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0ecb27f61899f24a61e028457c5eca26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6424a54b039dc72cd96713c4d5e3f53f = $(`<div id="html_6424a54b039dc72cd96713c4d5e3f53f" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94108</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> -0.0%<br><b>Gentrification Intensity:</b> 0.713<br><b>Gentrification Rate:</b> 19.9%<br></div>`)[0];
+                popup_0ecb27f61899f24a61e028457c5eca26.setContent(html_6424a54b039dc72cd96713c4d5e3f53f);
+            
+        
+
+        circle_marker_1923026af5a996f9a8b62639973d81db.bindPopup(popup_0ecb27f61899f24a61e028457c5eca26)
+        ;
+
+        
+    
+    
+            var circle_marker_083fb13d844f74d9f0e23fc9c9f3d762 = L.circleMarker(
+                [37.8601, -122.4946],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.470472702405228, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_b37c850c3aa8fda5804dd10e9f92224b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dff50628abfa96f5a058a0d8490f7fca = $(`<div id="html_dff50628abfa96f5a058a0d8490f7fca" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94965</strong><br><b>Actual Class:</b> High Growth (Gentrification)<br><b>Rent Growth:</b> 24.5%<br><b>Gentrification Intensity:</b> 1.327<br><b>Gentrification Rate:</b> 32.9%<br></div>`)[0];
+                popup_b37c850c3aa8fda5804dd10e9f92224b.setContent(html_dff50628abfa96f5a058a0d8490f7fca);
+            
+        
+
+        circle_marker_083fb13d844f74d9f0e23fc9c9f3d762.bindPopup(popup_b37c850c3aa8fda5804dd10e9f92224b)
+        ;
+
+        
+    
+    
+            var circle_marker_c710730be4a4a51ccad99b79991a609a = L.circleMarker(
+                [37.7694, -122.3867],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.283990015936293, "stroke": true, "weight": 2}
+            ).addTo(map_881b5d3a609eab3694b43b463d5eb842);
+        
+    
+        var popup_0c6bde3fc5649cf900a105c6f9ebb281 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b951d87c52495abe693a6e612f5022fc = $(`<div id="html_b951d87c52495abe693a6e612f5022fc" style="width: 100.0%; height: 100.0%;"><strong>ZIP 94158</strong><br><b>Actual Class:</b> Normal Growth<br><b>Rent Growth:</b> 7.1%<br><b>Gentrification Intensity:</b> 0.879<br><b>Gentrification Rate:</b> 25.2%<br></div>`)[0];
+                popup_0c6bde3fc5649cf900a105c6f9ebb281.setContent(html_b951d87c52495abe693a6e612f5022fc);
+            
+        
+
+        circle_marker_c710730be4a4a51ccad99b79991a609a.bindPopup(popup_0c6bde3fc5649cf900a105c6f9ebb281)
+        ;
+
+        
+    
+</script>
+</html>

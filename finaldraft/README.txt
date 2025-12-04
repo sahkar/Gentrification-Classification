@@ -1,28 +1,44 @@
-FINAL PROJECT - HOUSING PRICE REGRESSION
-========================================
+GENTRIFICATION CLASSIFICATION MODEL
+====================================
 
-WHAT TO RUN:
-------------
-1. Open: notebooks/housing_price_regression.ipynb
-2. Run all cells
+RESEARCH QUESTION:
+Can we use Yelp business ecosystem data to identify gentrified neighborhoods
+(future high rent growth areas)?
+
+SETUP:
+1. Install dependencies: pip install -r requirements.txt
+2. Set YELP_API_KEY in .env file (for fetch_yelp_data.py)
+
+RUN:
+1. Main pipeline: python main.py
+2. Fetch Yelp data (if needed): python fetch_yelp_data.py
 
 FILES:
-------
-- time_series_preparation.py  - Prepares time series data
-- regression_model.py         - Trains and evaluates models
-- notebooks/housing_price_regression.ipynb - Main notebook
+- main.py                      - Main classification pipeline
+- classification_preparation.py - Data preparation (rent growth labels + Yelp features)
+- classification_model.py       - Classification models (Logistic, RF, GB, XGBoost)
+- fetch_yelp_data.py            - Fetches Yelp data via API
+- presentation.ipynb           - Presentation notebook with visualizations
 
 DATA:
------
 - raw_data/ - Input data (ZORI rent, Yelp businesses)
-- data/ - Processed data (generated)
+- data/ - Processed classification data (generated)
 - outputs/ - Results and visualizations (generated)
 - models/ - Saved models (generated)
 
-WHAT IT DOES:
--------------
-Predicts future average rent per zip code using:
-- Historical rent trends (time series features)
-- Gentrification indicators from Yelp
-- Uses zip code holdout for realistic validation
+MODEL:
+Binary classification predicting high rent growth zip codes (top 25%) using:
+- Yelp business ecosystem features only (no historical rent data)
+- Gentrification indicators (scores, rates, business quality)
+- Business diversity and engagement metrics
+
+OUTPUTS:
+- classification_results.csv - Model performance metrics
+- classification_feature_importance.csv - Feature importance rankings
+- classification_model_comparison.png - Model comparison charts
+- roc_curves.png - ROC curves for all models
+- confusion_matrix.png - Confusion matrix for best model
+- classification_feature_importance.png - Top 15 features visualization
+- precision_recall_curves.png - Precision-recall curves
+- best_classifier.pkl - Saved best model
 
