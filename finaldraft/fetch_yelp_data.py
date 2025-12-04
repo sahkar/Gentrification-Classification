@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Fetch Yelp Business Data
-Fetches Yelp business data for all zip codes in Bay Area metros.
-"""
-
 import requests
 import pandas as pd
 from tqdm import tqdm

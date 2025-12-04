@@ -1,8 +1,3 @@
-"""
-Classification Data Preparation
-Prepares data for binary classification of high rent growth zip codes.
-"""
-
 import pandas as pd
 import numpy as np
 from pathlib import Path

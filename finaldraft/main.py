@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Gentrification Classification Model
-Predicts high rent growth zip codes using Yelp business ecosystem features.
-"""
-
 from classification_preparation import ClassificationDataPreparation
 from classification_model import GentrificationClassifier
 from pathlib import Path
@@ -47,8 +41,8 @@ def main():
         print("="*70)
         print(gent_features.head(10).to_string(index=False))
     
-    print(f"\n✓ Results saved to: outputs/")
-    print(f"✓ Model saved to: models/best_classifier.pkl")
+    print(f"\nResults saved to: outputs/")
+    print(f"Model saved to: models/best_classifier.pkl")
 
 if __name__ == "__main__":
     main()

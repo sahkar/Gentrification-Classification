@@ -92,3 +92,6 @@ To improve this model, I would need to improve my data model.
 
 ### Applications
 A model like this that can analyze neighborhood businesses to predict gentrification can be a powerful tool in predicting rent price changes over time. This model would enable us to monitor businesses as a gentrification indicator and could serve as an early warning sign for displacement risk. Additionally, people in real estate could use a model like this to find up-and-coming zip codes to invest in.
+
+### Run
+`python main.py`

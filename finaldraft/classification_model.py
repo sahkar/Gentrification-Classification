@@ -1,12 +1,7 @@
-"""
-Gentrification Classification Model
-Binary classification to predict high rent growth zip codes.
-"""
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
-from sklearn.preprocessing import StandardScaler, RobustScaler
+from sklearn.preprocessing import RobustScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import (
@@ -18,14 +13,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 from pathlib import Path
-import warnings
-warnings.filterwarnings('ignore')
-
-try:
-    import xgboost as xgb
-    HAS_XGBOOST = True
-except ImportError:
-    HAS_XGBOOST = False
 
 class GentrificationClassifier:
     def __init__(self, random_state=42):
@@ -37,11 +24,9 @@ class GentrificationClassifier:
         self.best_model_name = None
         
     def load_data(self, data_path="data/classification_data.csv"):
-        """Load classification data"""
         print("Loading classification data...")
         data = pd.read_csv(data_path)
         
-        # Handle zip code column
         zip_codes = None
         if 'zip' in data.columns:
             zip_codes = data['zip'].values
@@ -58,14 +43,11 @@ class GentrificationClassifier:
             raise ValueError("Target column ('target' or 'high_growth') not found in data")
         
         X = data.drop(columns=[col for col in exclude_cols if col in data.columns])
-        
-        # Ensure only numeric columns are included
         X = X.select_dtypes(include=[np.number])
         
         self.feature_names = X.columns.tolist()
-        print(f"✓ Loaded data: {X.shape[0]} samples, {X.shape[1]} features")
+        print(f"Loaded data: {X.shape[0]} samples, {X.shape[1]} features")
         
-        # Show feature breakdown
         gent_features = [f for f in self.feature_names if 'gentrification' in f.lower() or 'business' in f.lower()]
         other_features = [f for f in self.feature_names if f not in gent_features]
         
@@ -75,7 +57,6 @@ class GentrificationClassifier:
         return X, y, zip_codes
     
     def prepare_data(self, X, y, zip_codes=None, test_size=0.2, split_strategy='random'):
-        """Prepare train/test split"""
         if split_strategy == 'zip_holdout' and zip_codes is not None:
             zip_series = pd.Series(zip_codes, index=X.index)
             unique_zips = zip_series.unique()
@@ -108,12 +89,12 @@ class GentrificationClassifier:
             y_train = y[train_mask]
             y_test = y[test_mask]
             
-            print(f"✓ Zip code holdout: {len(X_train)} train, {len(X_test)} test")
+            print(f"Zip code holdout: {len(X_train)} train, {len(X_test)} test")
         else:
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=test_size, random_state=self.random_state, stratify=y
             )
-            print(f"✓ Random split: {len(X_train)} train, {len(X_test)} test")
+            print(f"Random split: {len(X_train)} train, {len(X_test)} test")
         
         for col in X_train.columns:
             if X_train[col].isna().any():
@@ -133,7 +114,6 @@ class GentrificationClassifier:
         return X_train_scaled, X_test_scaled, y_train, y_test
     
     def train_models(self, X_train, y_train):
-        """Train multiple classification models"""
         print("\nTraining models...")
         
         self.models['Logistic Regression'] = LogisticRegression(
@@ -157,16 +137,9 @@ class GentrificationClassifier:
         )
         self.models['Gradient Boosting'].fit(X_train, y_train)
         
-        if HAS_XGBOOST:
-            self.models['XGBoost'] = xgb.XGBClassifier(
-                n_estimators=100, random_state=self.random_state, eval_metric='logloss'
-            )
-            self.models['XGBoost'].fit(X_train, y_train)
-        
-        print(f"✓ Trained {len(self.models)} models")
+        print(f"Trained {len(self.models)} models")
     
     def evaluate_models(self, X_train, X_test, y_train, y_test):
-        """Evaluate all classification models"""
         print("\nEvaluating models...")
         
         results = []
@@ -214,12 +187,11 @@ class GentrificationClassifier:
         self.best_model_name = results_df.loc[best_idx, 'model']
         self.best_model = self.models[self.best_model_name]
         
-        print(f"\n✓ Best model: {self.best_model_name} (ROC-AUC: {results_df.loc[best_idx, 'test_roc_auc']:.4f})")
+        print(f"\nBest model: {self.best_model_name} (ROC-AUC: {results_df.loc[best_idx, 'test_roc_auc']:.4f})")
         
         return results_df
     
     def analyze_feature_importance(self, X_train, y_train):
-        """Analyze feature importance from Random Forest"""
         print("\nAnalyzing feature importance...")
         
         rf = RandomForestClassifier(n_estimators=100, random_state=self.random_state, class_weight='balanced')
@@ -233,7 +205,6 @@ class GentrificationClassifier:
         return importance_df
     
     def create_visualizations(self, X_test, y_test, results_df, importance_df, output_dir="outputs"):
-        """Create classification visualizations"""
         print("\nCreating visualizations...")
         
         output_dir = Path(output_dir)
@@ -269,7 +240,7 @@ class GentrificationClassifier:
         
         plt.tight_layout()
         plt.savefig(output_dir / 'classification_model_comparison.png', dpi=300, bbox_inches='tight')
-        print("✓ Saved classification_model_comparison.png")
+        print("Saved classification_model_comparison.png")
         
         plt.figure(figsize=(10, 8))
         for name, model in self.models.items():
@@ -286,7 +257,7 @@ class GentrificationClassifier:
         plt.grid(alpha=0.3)
         plt.tight_layout()
         plt.savefig(output_dir / 'roc_curves.png', dpi=300, bbox_inches='tight')
-        print("✓ Saved roc_curves.png")
+        print("Saved roc_curves.png")
         
         y_pred = self.best_model.predict(X_test)
         cm = confusion_matrix(y_test, y_pred)
@@ -300,7 +271,7 @@ class GentrificationClassifier:
         plt.title(f'Confusion Matrix - {self.best_model_name}')
         plt.tight_layout()
         plt.savefig(output_dir / 'confusion_matrix.png', dpi=300, bbox_inches='tight')
-        print("✓ Saved confusion_matrix.png")
+        print("Saved confusion_matrix.png")
         
         plt.figure(figsize=(12, 8))
         top_features = importance_df.head(15)
@@ -311,7 +282,7 @@ class GentrificationClassifier:
         plt.gca().invert_yaxis()
         plt.tight_layout()
         plt.savefig(output_dir / 'classification_feature_importance.png', dpi=300, bbox_inches='tight')
-        print("✓ Saved classification_feature_importance.png")
+        print("Saved classification_feature_importance.png")
         
         plt.figure(figsize=(10, 8))
         for name, model in self.models.items():
@@ -327,12 +298,11 @@ class GentrificationClassifier:
         plt.grid(alpha=0.3)
         plt.tight_layout()
         plt.savefig(output_dir / 'precision_recall_curves.png', dpi=300, bbox_inches='tight')
-        print("✓ Saved precision_recall_curves.png")
+        print("Saved precision_recall_curves.png")
         
         plt.close('all')
     
     def save_model(self, output_path="models/best_classifier.pkl"):
-        """Save the best model"""
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
@@ -343,11 +313,10 @@ class GentrificationClassifier:
             'model_name': self.best_model_name
         }, output_path)
         
-        print(f"✓ Saved best model to {output_path}")
+        print(f"Saved best model to {output_path}")
     
     def run_full_pipeline(self, data_path="data/classification_data.csv", output_dir="outputs",
                          use_zip_holdout=False):
-        """Run the complete classification pipeline"""
         print("="*70)
         print("GENTRIFICATION CLASSIFICATION MODEL")
         print("="*70)
